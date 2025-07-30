@@ -3,32 +3,17 @@
 
 @include('partials/head.html')
 
-<body class="page__body">
-  <div class="site-container">
+<body>
+  <div>
     @include('partials/header.html')
     <main class="main">
       <picture>
-        <source srcset="img/cover.webp" type="image/webp">
-        <img loading="lazy" src="img/cover.jpg" class="image" width="300" height="300" alt="Обложка канала MaxGraph">
+        <!-- <source srcset="img/cover.webp" type="image/webp"> -->
+        <img loading="lazy" src="img/pages/main/hero.jpg" class="image" width="300" height="300" alt="Картинка">
       </picture>
     </main>
     @include('partials/footer.html')
-    <!-- @include('html/h1.html') пример include -->
   </div>
-  <!DOCTYPE html>
-  <html lang="ru" class="page">
-
-  @include('partials/head.html')
-
-  <body class="page__body">
-    @include('partials/header.html')
-    <main class="main">
-      <h1>Главная</h1>
-    </main>
-    @include('partials/footer.html')
-  </body>
-
-  </html>
 </body>
 
 </html>

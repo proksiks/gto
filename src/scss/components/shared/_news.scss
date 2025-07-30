@@ -37,6 +37,13 @@
 }
 .news__article-title {
   font-size: 2.25rem;
+  a {
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: var(--color-red);
+    }
+  }
 }
 .news__article-txt {
   margin-top: 0.5rem;

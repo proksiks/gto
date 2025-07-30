@@ -82,11 +82,6 @@
   position: relative;
   transition: color 0.2s ease-in-out;
 
-  // .header__menu-link_active
-  &_active {
-    color: var(--color-red);
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -100,6 +95,14 @@
     opacity: 0;
   }
   &:hover {
+    color: var(--color-red);
+    &::before {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  // .header__menu-link_active
+  &_active {
     color: var(--color-red);
     &::before {
       opacity: 1;

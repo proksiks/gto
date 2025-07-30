@@ -35,7 +35,7 @@
       </div>
       <a class="header__profile button button_red" href="#" target="_blank">
         Личный кабинет @include('components/sprite.html', {
-        class:"header__profile-icon", width: 16, height: 16, name: "arrow-up" })
+        class:"header__menu-icon", width: 32, height: 32, name: "arrow-up" })
       </a>
     </div>
   </div>
@@ -46,7 +46,9 @@
           <a class="header__menu-link" href="#">О ГТО</a>
         </li>
         <li class="header__menu-item">
-          <a class="header__menu-link" href="#">Нормативы</a>
+          <a class="header__menu-link header__menu-link_active" href="#"
+            >Нормативы</a
+          >
         </li>
         <li class="header__menu-item">
           <a class="header__menu-link" href="#">Регионы</a>

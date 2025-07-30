@@ -1,7 +1,7 @@
 // если вы хотите использовать sass-переменные - удалите root
 // colors
 :root {
-  --content-width: 85rem;
+  --content-width: 86.25rem;
   --container-offset: 1rem;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
@@ -12,4 +12,5 @@
   --light-color: #fff;
   --silver-color: #b4b4b4;
   --color-red: #cd313c;
+  --color-black: #202020;
 }

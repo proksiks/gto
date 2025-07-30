@@ -1,3 +1,39 @@
-.header {
-  font-weight: 700;
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+.header__info {
+  display: flex;
+  align-items: center;
+}
+.header__phone {
+}
+.header__phone-label {
+  font-family: var(--font-pt);
+  color: var(--silver-color);
+}
+.header__phone-link {
+  display: block;
+  margin-top: 0.375rem;
+  font-size: 2rem;
+  color: var(--color-red);
+}
+.header__pictures {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.header__profile {
+}
+.header__profile-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__socials {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }

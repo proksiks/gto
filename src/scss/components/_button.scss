@@ -1,0 +1,19 @@
+.button {
+  padding: 1rem 1.5rem;
+  color: var(--light-color);
+  font-family: var(--font-babas);
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  // .button_red
+  &_red {
+    background-color: var(--color-red);
+
+    &:hover {
+      background-color: #c02c36;
+    }
+    &:active {
+      background-color: #ac1b25;
+    }
+  }
+}

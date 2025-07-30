@@ -5,7 +5,11 @@
 }
 
 body {
-  font-family: 'BebasNeue', sans-serif;
+  font-family: var(--font-babas);
+}
+
+.main {
+  min-height: 250rem;
 }
 
 h1,

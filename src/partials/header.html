@@ -33,10 +33,46 @@
         <img src="img/shared/emblem.svg" alt="Герб РФ" />
         <img src="img/shared/fds.png" alt="Логотип ФДС" />
       </div>
-      <div class="header__profile">
-        <button class="header__profile-button button button_red">Личный кабинет</button>
-      </div>
+      <a class="header__profile button button_red" href="#" target="_blank">
+        Личный кабинет @include('components/sprite.html', {
+        class:"header__profile-icon", width: 16, height: 16, name: "arrow-up" })
+      </a>
     </div>
   </div>
-  <div class="header__bottom"></div>
+  <div class="header__container container">
+    <nav class="header__bottom">
+      <ul class="header__menu">
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">О ГТО</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Нормативы</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Регионы</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Новости</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Вопрос-Ответ</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Документы</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Медиа</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-link" href="#">Партнеры</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__menu-switch" href="#">
+            @include('components/sprite.html', { class:"header__menu-icon",
+            width: 32, height: 32, name: "glasses" })
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>

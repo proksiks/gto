@@ -2,6 +2,7 @@
 @use "mixins";
 @use "fonts";
 @use "settings";
+@use "global";
 
 @use "./components/button";
 @use "./components/header";
@@ -9,6 +10,7 @@
 @use "./components/pages/main/loop";
 @use "./components/pages/main/about";
 @use "./components/pages/main/gallery";
+@use "./components/pages/main/standards";
 
 @use "./components/shared/news";
 @use "./components/shared/article";

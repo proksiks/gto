@@ -1,15 +1,14 @@
 .main-faq {
-  padding: 7.5rem 0;
-}
-.main-faq__container {
+  margin-top: 7.5rem;
+  @media (max-width: 480px) {
+    margin-top: 5rem;
+  }
 }
 .main-faq__head {
   display: flex;
   justify-content: space-between;
 }
 .main-faq__title {
-}
-.subtitle {
 }
 .main-faq__button {
   &_desctop {

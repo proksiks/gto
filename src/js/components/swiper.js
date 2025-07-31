@@ -20,3 +20,22 @@ const newsSwiper = new Swiper(".news__slider", {
     type: "progressbar",
   },
 });
+
+const galleries = new Swiper("#galleryTop", {
+  slidesPerView: "auto",
+  autoplay: {
+    enabled: true,
+    delay: 1,
+    pauseOnMouseEnter: false,
+    disableOnInteraction: true,
+  },
+});
+const galleries2 = new Swiper("#galleryBottom", {
+  slidesPerView: "auto",
+  autoplay: {
+    enabled: true,
+    delay: 1,
+    pauseOnMouseEnter: false,
+    disableOnInteraction: true,
+  },
+});

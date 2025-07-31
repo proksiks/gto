@@ -31,18 +31,18 @@
   }
 }
 .main-gallery__items {
-  width: 100%;
-  position: relative;
-  display: flex;
-  gap: 1rem;
+  // width: 100%;
+  // position: relative;
+  // display: flex;
+  // gap: 1rem;
 
-  @media (max-width: 480px) {
-    justify-content: center;
-  }
+  // @media (max-width: 480px) {
+  //   justify-content: center;
+  // }
 
-  & + & {
-    margin-top: 1rem;
-  }
+  // & + & {
+  //   margin-top: 1rem;
+  // }
 
   &::before,
   &::after {
@@ -67,7 +67,7 @@
   }
 }
 .main-gallery__item {
-  flex-shrink: 0;
+  width: auto;
 }
 .main-gallery__image {
   position: relative;

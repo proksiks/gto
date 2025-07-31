@@ -1,0 +1,36 @@
+.main-map {
+  margin-top: 10rem;
+  @media (max-width: 480px) {
+    margin-top: 5rem;
+  }
+}
+.main-map__head {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 480px) {
+    display: block;
+  }
+}
+.main-map__button {
+  @media (max-width: 480px) {
+    margin-top: 1.5rem;
+  }
+}
+.main-map__link {
+  width: 100%;
+  text-align: center;
+}
+.main-map__body {
+  margin-top: 2.5rem;
+  &_desctop {
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+  &_mobile {
+    display: none;
+    @media (max-width: 480px) {
+      display: block;
+    }
+  }
+}

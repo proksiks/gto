@@ -1,0 +1,35 @@
+.main-faq {
+  padding: 7.5rem 0;
+}
+.main-faq__container {
+}
+.main-faq__head {
+  display: flex;
+  justify-content: space-between;
+}
+.main-faq__title {
+}
+.subtitle {
+}
+.main-faq__button {
+  &_desctop {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &_mobile {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+      margin-top: 1rem;
+      .main-faq__link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+.main-faq__link {
+}
+.main-faq__body {
+}

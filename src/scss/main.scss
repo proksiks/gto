@@ -5,6 +5,7 @@
 @use "global";
 
 @use "./components/button";
+@use "./components/accordion";
 @use "./components/header";
 @use "./components/pages/main/hero";
 @use "./components/pages/main/loop";
@@ -12,6 +13,8 @@
 @use "./components/pages/main/gallery";
 @use "./components/pages/main/standards";
 @use "./components/pages/main/info";
+@use "./components/pages/main/map";
+@use "./components/pages/main/faq";
 
 @use "./components/shared/news";
 @use "./components/shared/article";

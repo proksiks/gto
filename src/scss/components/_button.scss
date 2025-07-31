@@ -7,6 +7,8 @@
   border-radius: 0.5rem;
   font-size: 1.5rem;
   text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
+
   // .button_red
   &_red {
     background-color: var(--color-red);
@@ -22,5 +24,8 @@
   &_border {
     border: 0.125rem solid var(--color-red);
     color: var(--color-red);
+    &:hover {
+      background-color: rgba(205, 49, 60, 0.05);
+    }
   }
 }

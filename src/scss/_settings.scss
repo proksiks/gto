@@ -20,6 +20,10 @@ body {
 }
 .main {
   background-color: rgba(242, 242, 242, 1);
+  padding-bottom: 7.5rem;
+  @media (max-width: 480px) {
+    padding-bottom: 5rem;
+  }
 }
 h1,
 h2,

@@ -1,13 +1,19 @@
-const headerEl = document.querySelector(".header_desktop");
+const headerDesctopEl = document.querySelector(".header_desktop");
 const headerBurgrerEl = document.querySelector(".header-mobile__burger");
 const headerMenuEl = document.querySelector(".header-mobile__menu");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 90) {
-    headerEl.classList.add("header_slide");
-  } else {
-    headerEl.classList.remove("header_slide");
+let lastPosition = 0;
+let limitPosition = 0;
+let scrolled = false;
+
+window.addEventListener("scroll", (event) => {
+  if (lastPosition < window.scrollY && limitPosition < window.scrollY) {
+    headerDesctopEl.classList.add("header_slide");
   }
+  if (lastPosition > window.scrollY) {
+    headerDesctopEl.classList.remove("header_slide");
+  }
+  lastPosition = window.scrollY;
 });
 
 headerBurgrerEl.addEventListener("click", (event) => {

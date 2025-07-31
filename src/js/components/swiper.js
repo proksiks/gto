@@ -11,7 +11,7 @@ const LOOP_ANIMATION = {
   slidesPerView: "auto",
   loop: true,
   speed: 6000,
-  freeMode: true,
+  // freeMode: true,
   autoplay: AUTO_PLAY,
 };
 
@@ -30,7 +30,6 @@ new Swiper("#partnersBottom", {
   spaceBetween: 16,
   speed: 12000,
 });
-
 new Swiper(".news__slider", {
   slidesPerView: 1.25,
   spaceBetween: 16,

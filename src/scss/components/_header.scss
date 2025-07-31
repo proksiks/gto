@@ -3,10 +3,10 @@
   top: 0;
   z-index: 10;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: var(--light-color);
   // .header_slide
   &_slide {
     transform: translateY(-6.875rem);
-    background-color: var(--light-color);
   }
 
   &_desktop {
@@ -138,8 +138,7 @@
   }
 }
 .header__menu-icon {
-  fill: none;
-  stroke: white;
+
 }
 
 .header-mobile {
@@ -185,6 +184,7 @@
         transform: translate(-50%, -50%) rotate(-45deg);
       }
       &:nth-child(2) {
+        top: 50%;
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
       }
@@ -279,9 +279,4 @@
 }
 .header-mobile__footer-switch-icon {
   display: block;
-}
-
-
-* {
-  pointer-events: all !important;
 }

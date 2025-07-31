@@ -4,7 +4,7 @@ const AUTO_PLAY = {
   enabled: true,
   delay: 1,
   pauseOnMouseEnter: false,
-  disableOnInteraction: true,
+  // disableOnInteraction: true,
 };
 
 const LOOP_ANIMATION = {
@@ -20,6 +20,12 @@ Swiper.use([Navigation, Pagination]);
 new Swiper(".loop-items", LOOP_ANIMATION);
 new Swiper("#galleryTop", { ...LOOP_ANIMATION, spaceBetween: 16 });
 new Swiper("#galleryBottom", {
+  ...LOOP_ANIMATION,
+  spaceBetween: 16,
+  speed: 12000,
+});
+new Swiper("#partnersTop", { ...LOOP_ANIMATION, spaceBetween: 16 });
+new Swiper("#partnersBottom", {
   ...LOOP_ANIMATION,
   spaceBetween: 16,
   speed: 12000,

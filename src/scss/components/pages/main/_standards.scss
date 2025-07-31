@@ -67,27 +67,18 @@
   &_red {
     position: relative;
     background-color: var(--color-red);
-    &::before {
-      background-image: url("../img/pages/main/standarts/pattern.png");
-    }
   }
 
   // .standards__item_blue
   &_blue {
     position: relative;
     background-color: var(--color-blue);
-    &::before {
-      background-image: url("../img/pages/main/standarts/pattern.png");
-    }
   }
 
   // .standards__item_green
   &_green {
     position: relative;
     background-color: var(--color-green);
-    &::before {
-      background-image: url("../img/pages/main/standarts/pattern.png");
-    }
   }
 }
 .standards__item-title {

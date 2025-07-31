@@ -30,23 +30,27 @@
 .loop-items__list {
   display: flex;
   gap: 0.75rem;
-  animation: loop 60s linear infinite;
+  transition-timing-function: linear !important;
+  // animation: loop 60s linear infinite;
   @media (max-width: 480px) {
     gap: 0.25rem;
   }
 }
 
 .loop-items__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: auto;
   flex-shrink: 0;
+  border-radius: 1rem;
+  background-color: rgba(41, 41, 41, 0.1);
+}
+
+.loop-items__link {
   width: 7rem;
   height: 7rem;
   padding: 1rem;
-  border-radius: 1rem;
-  background-color: rgba(41, 41, 41, 0.1);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 768px) {
     width: 5rem;
     height: 5rem;

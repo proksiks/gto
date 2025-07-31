@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-headerBurgrerEl.addEventListener("click", () => {
+headerBurgrerEl.addEventListener("click", (event) => {
   document.body.classList.toggle("dis-scroll");
   headerBurgrerEl.classList.toggle("header-mobile__burger_active");
   headerMenuEl.classList.toggle("header-mobile__menu_active");

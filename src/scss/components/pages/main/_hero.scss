@@ -1,10 +1,10 @@
 .hero {
   position: relative;
-  min-height: 51.25rem;
+  min-height: 75dvh;
   display: flex;
   align-items: center;
   @media (max-width: 480px) {
-    min-height: 40rem;
+    min-height: 85dvh;
   }
 
   // .hero::before

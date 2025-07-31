@@ -47,6 +47,11 @@
   font-size: 2rem;
   color: var(--color-red);
   transition: color 0.2s ease-in-out;
+
+  @media(max-width: 1280px) {
+    font-size: 1.5rem;
+  }
+
   &:hover {
     color: black;
   }
@@ -274,4 +279,9 @@
 }
 .header-mobile__footer-switch-icon {
   display: block;
+}
+
+
+* {
+  pointer-events: all !important;
 }

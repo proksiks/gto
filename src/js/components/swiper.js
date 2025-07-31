@@ -1,41 +1,35 @@
-import Swiper from "swiper";
+import Swiper from "swiper/bundle";
 import { Navigation, Pagination } from "swiper/modules";
+const AUTO_PLAY = {
+  enabled: true,
+  delay: 1,
+  pauseOnMouseEnter: false,
+  disableOnInteraction: true,
+};
+
+const LOOP_ANIMATION = {
+  slidesPerView: "auto",
+  loop: true,
+  speed: 6000,
+  freeMode: true,
+  autoplay: AUTO_PLAY,
+};
+
 Swiper.use([Navigation, Pagination]);
 
-const swiper = new Swiper(".loop-items", {
-  slidesPerView: "auto",
-  autoplay: {
-    enabled: true,
-    delay: 1,
-    pauseOnMouseEnter: false,
-    disableOnInteraction: true,
-  },
+new Swiper(".loop-items", LOOP_ANIMATION);
+new Swiper("#galleryTop", { ...LOOP_ANIMATION, spaceBetween: 16 });
+new Swiper("#galleryBottom", {
+  ...LOOP_ANIMATION,
+  spaceBetween: 16,
+  speed: 12000,
 });
 
-const newsSwiper = new Swiper(".news__slider", {
+new Swiper(".news__slider", {
   slidesPerView: 1.25,
   spaceBetween: 16,
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar",
-  },
-});
-
-const galleries = new Swiper("#galleryTop", {
-  slidesPerView: "auto",
-  autoplay: {
-    enabled: true,
-    delay: 1,
-    pauseOnMouseEnter: false,
-    disableOnInteraction: true,
-  },
-});
-const galleries2 = new Swiper("#galleryBottom", {
-  slidesPerView: "auto",
-  autoplay: {
-    enabled: true,
-    delay: 1,
-    pauseOnMouseEnter: false,
-    disableOnInteraction: true,
   },
 });

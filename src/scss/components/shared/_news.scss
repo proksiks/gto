@@ -1,5 +1,9 @@
 .news {
   margin-top: 7.5rem;
+  @media (max-width: 480px) {
+    margin-top: 2.5rem;
+  }
+
   &_desctop {
     @media (max-width: 768px) {
       display: none;

@@ -7,10 +7,9 @@
 body {
   font-family: var(--font-babas);
   line-height: 1;
-}
-
-.main {
-  min-height: 250rem;
+  &.dis-scroll {
+    overflow: hidden;
+  }
 }
 
 h1,

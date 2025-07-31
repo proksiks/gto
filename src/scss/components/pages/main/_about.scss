@@ -1,32 +1,52 @@
 .main-about {
   margin-top: 10rem;
+  @media (max-width: 480px) {
+    margin-top: 5rem;
+  }
 }
 .main-about__subtitle {
   color: var(--silver-color);
   font-size: 1.5rem;
   font-weight: 700;
   font-family: var(--font-pt);
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+  }
 }
 .main-about__title {
-
+  margin-top: 2.5rem;
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
 }
 .main-about__text {
   margin-top: 1rem;
+  font-size: 1.125rem;
   font-family: var(--font-pt);
 }
 .main-about__button {
   margin-top: 2.5rem;
+  @media (max-width: 480px) {
+    width: 100%;
+    text-align: center;
+  }
 }
 .main-about__items {
   display: flex;
   align-items: flex-end;
   gap: 2.5rem;
+  @media (max-width: 480px) {
+    gap: 0.5rem;
+    margin-top: 3.5rem;
+  }
 }
 .main-about__item {
   position: relative;
   flex: 1;
   display: flex;
   justify-content: center;
+  padding: 0 0.875rem;
   &::before {
     content: "";
     pointer-events: none;
@@ -46,12 +66,21 @@
 
   &:first-child {
     min-height: 12rem;
+    @media (max-width: 480px) {
+      min-height: 7rem;
+    }
   }
   &:nth-child(2) {
-    min-height: 15.75rem;
+    min-height: 252px;
+    @media (max-width: 480px) {
+      min-height: 8.625rem;
+    }
   }
   &:last-child {
     min-height: 19.5625rem;
+    @media (max-width: 480px) {
+      min-height: 10.1875rem;
+    }
   }
 
   &:hover {
@@ -64,4 +93,7 @@
   position: relative;
   margin-top: -3.125rem;
   transition: transform 0.3s ease-in-out;
+  @media (max-width: 480px) {
+    margin-top: -2rem;
+  }
 }

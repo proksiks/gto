@@ -3,6 +3,9 @@
   min-height: 51.25rem;
   display: flex;
   align-items: center;
+  @media (max-width: 480px) {
+    min-height: 40rem;
+  }
 
   // .hero::before
   &::before {
@@ -34,11 +37,20 @@
 .hero__title {
   font-size: 8rem;
   font-weight: 700;
+  @media (max-width: 1024px) {
+    font-size: 6rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 4rem;
+  }
 }
 .hero__subtitle {
   font-size: 1.5rem;
   font-family: var(--font-pt);
   margin-top: 1.5rem;
+  @media (max-width: 480px) {
+    font-size: 1.125rem;
+  }
 }
 
 .hero__button {
@@ -49,4 +61,12 @@
 .hero__picture {
   position: absolute;
   inset: 0;
+  img {
+    height: 100%;
+  }
+  @media (max-width: 480px) {
+    img {
+      object-position: 35% center;
+    }
+  }
 }

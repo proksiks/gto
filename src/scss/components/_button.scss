@@ -18,4 +18,9 @@
       background-color: #ac1b25;
     }
   }
+
+  &_border {
+    border: 0.125rem solid var(--color-red);
+    color: var(--color-red);
+  }
 }

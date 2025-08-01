@@ -1,5 +1,30 @@
 <div class="about-hero">
   <div class="about-hero__container container">
-    @include('../../components/breadcrumbs.html', { "class": "about-hero__breadcrumbs" })
+    <div class="about-hero__breadcrumbs breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="/">Главная</a>
+        </li>
+
+        <li class="breadcrumbs__item breadcrumbs__item--active">
+          <span>О ГТО</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-hero__content">
+      <img
+        class="about-hero__logo"
+        src="img/pages/about/hero-logo.svg"
+        alt="ЛОГОТИП"
+      />
+      <h1 class="about-hero__title">
+        Комплекс физических испытаний, направленный на укрепление здоровья всех
+        россиян и популяризацию активного образа жизни.
+      </h1>
+      <a class="about-hero__link" href="#about-history">
+        <img src="img/icons/arrow-down.svg" alt="Вниз" />
+      </a>
+    </div>
   </div>
 </div>

@@ -4,10 +4,15 @@
 @use "settings";
 @use "global";
 
+// Shared
+@use "./components/breadcrumbs";
 @use "./components/button";
 @use "./components/accordion";
 @use "./components/header";
 @use "./components/footer";
+// Shared
+
+// Main
 @use "./components/pages/main/hero";
 @use "./components/pages/main/loop";
 @use "./components/pages/main/about";
@@ -18,6 +23,11 @@
 @use "./components/pages/main/faq";
 @use "./components/pages/main/partners";
 @use "./components/pages/media/media";
+// Main
+
+// About
+@use "./components/pages/about/about-hero";
+// About
 
 @use "./components/shared/news";
 @use "./components/shared/article";

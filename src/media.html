@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html', { "title": "Медиагалерея" })
+
+<body>
+  <div>
+    @include('partials/header.html')
+    <main class="main">
+      <div class="media">
+        <div class="container">
+          <div class="media__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="/">Главная</a>
+              </li>
+
+              <li class="breadcrumbs__item breadcrumbs__item--active">
+                <span>Медиа</span>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="media__subtitle subtitle">Медиагалерея</h1>
+
+          <div class="media__tabs-head">
+            <div class="tabs">
+              <div class="tabs__head">
+                <ul class="tabs__nav">
+                  <li class="tabs__nav-item tabs__nav-item--active" data-target="1">
+                    <button class="tabs__nav-btn">Фото</button>
+                  </li>
+                  <li class="tabs__nav-item" data-target="2">
+                    <button class="tabs__nav-btn">Видео</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="media__filter filter">
+            <div class="filter__selects">
+              <div class="select-menu">
+                <div class="select-menu__btn-wrapper">
+                  <button class="select-menu__btn">
+                    <img class="select-menu__btn-img" src="img/svg/location.svg" alt="Локация">
+                    Дата публикации
+                  </button>
+
+                  <img class="select-menu__arrow" src="img/svg/arrow-down.svg" alt="Иконка">
+                </div>
+
+                <!-- <ul class="select-menu__options select-menu__options--grey">
+                  <li class="select-menu__option">По популярности</li>
+                  <li class="select-menu__option">По наличию</li>
+                </ul> -->
+              </div>
+
+
+              <div class="select-menu">
+                <div class="select-menu__btn-wrapper">
+                  <button class="select-menu__btn">
+                    <img class="select-menu__btn-img" src="img/svg/calendar.svg" alt="Календарь">
+                    Санкт-Петербург
+                  </button>
+
+                  <img class="select-menu__arrow" src="img/svg/arrow-down.svg" alt="Иконка">
+                </div>
+
+                <!-- <ul class="select-menu__options select-menu__options--grey">
+                  <li class="select-menu__option">По популярности</li>
+                  <li class="select-menu__option">По наличию</li>
+                </ul> -->
+              </div>
+            </div>
+
+            <button class="filter__remove">
+              <img class="filter__remove-img" src="img/svg/close.svg" alt="Удалить">
+              Сбросить фильтр
+            </button>
+          </div>
+
+          <div class="media__tabs-content tabs">
+            <ul class="tabs__content">
+              <li class="tabs__panel tabs__panel--active" id="1">
+                <ul class="media__list">
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="photo-card">
+                      <a class="photo-card__link" href="#">
+                        <div class="photo-card__img-wrap">
+                          <img class="photo-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                          <div class="photo-card__qty">
+                            <img class="photo-card__qty-pic" src="img/svg/pic.svg" alt="Картинка">
+
+                            <span class="photo-card__qty-num">24</span>
+                          </div>
+                        </div>
+
+                        <div class="photo-card__info">
+                          <date class="photo-card__date">12.01.2025</date>
+
+                          <span class="photo-card__city">Санкт-Петербург</span>
+                        </div>
+
+                        <h4 class="photo-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                      </a>
+                    </article>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="tabs__panel" id="2">
+                <ul class="media__list-video">
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                  <li class="media__item">
+                    <article class="video-card">
+                      <div class="video-card__img-wrap">
+                        <img class="video-card__img" src="img/pages/media/img.jpg" alt="Картинка">
+
+                        <time class="video-card__time">
+                          12:02
+                        </time>
+
+                        <div class="video-card__play-btn">
+                          <svg class="video-card__play-icon" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0L18 9.99985L0 20L0 0Z" fill="#CD313C" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="video-card__info">
+                        <date class="video-card__date">12.01.2025</date>
+
+                        <span class="video-card__city">Санкт-Петербург</span>
+                      </div>
+
+                      <h4 class="video-card__title">ГТО на ПМЭФ-2025: чествование героев и чемпионов!</h4>
+                    </article>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <button class="media__more-btn button button_red">Показать еще</button>
+
+
+            <div class="media__pagination pagination">
+              <button class="pagination__arrows pagination__arrows--disabled pagination__prev">
+                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 3L5.5 8.5L10.5 14" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <ul class="pagination__list">
+                <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                <li class="pagination__item"><a class="pagination__link pagination__link--active" href="#">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">4</a></li>
+                <li class="pagination__item pagination__item--mobile"><a class="pagination__link" href="#">5</a></li>
+                <li class="pagination__item pagination__item--mobile"><a class="pagination__link" href="#">6</a></li>
+                <li class="pagination__item-ellipsis">...</li>
+                <li class="pagination__item"><a class="pagination__link" href="#">124</a></li>
+              </ul>
+
+              <button class="pagination__arrows pagination__next">
+                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 3L5.5 8.5L10.5 14" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

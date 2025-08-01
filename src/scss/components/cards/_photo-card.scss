@@ -1,0 +1,128 @@
+.photo-card {
+  background-color: var(--light-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.150s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  @media screen and (width <=768px) {
+    padding: 1rem;
+  }
+
+  &__link {
+    &:hover {
+      .photo-card__img-wrap {
+        &::before {
+          opacity: 0.2;
+        }
+      }
+
+      .photo-card__img {
+        transform: scale(1.1);
+      }
+
+      .photo-card__title {
+        color: var(--color-red);
+      }
+
+      .photo-card__qty {
+        bottom: 8px;
+      }
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 0.25rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-red);
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.150s;
+      z-index: 2;
+    }
+
+    @media screen and (width <=768px) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__img {
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: all 0.150s;
+  }
+
+  &__qty {
+    position: absolute;
+    padding: 4px 8px;
+    background-color: var(--color-red);
+    border-radius: 2.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    bottom: -100%;
+    right: 8px;
+    transition: ease-in-out 0.2s;
+    z-index: 2;
+
+    @media screen and (width <=768px) {
+      bottom: 8px;
+    }
+  }
+
+  &__qty-num {
+    color: var(--light-color);
+    font-family: var(--font-pt);
+    font-size: 0.75rem;
+
+  }
+
+  &__info {
+    color: var(--silver-color);
+    margin-bottom: 1.5rem;
+
+    @media screen and (width <=768px) {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__date {
+    position: relative;
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+
+    &::before {
+      content: '|';
+      color: var(--silver-color);
+      position: absolute;
+      right: -0.5rem;
+    }
+  }
+
+  &__city,
+  &__date {
+    font-family: var(--font-pt);
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    transition: color 0.150s;
+
+    @media screen and (width <=768px) {
+      font-size: 1.5rem;
+    }
+  }
+}

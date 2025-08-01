@@ -1,0 +1,141 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (width <=768px) {
+    justify-content: center;
+  }
+
+  &__item-ellipsis {
+    display: flex;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 49px;
+
+    @media screen and (width <=768px) {
+      width: 54px;
+      height: 46px;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 49px;
+    transition:
+      background-color ease 0.3s,
+      border-color ease 0.3s,
+      color ease 0.3s;
+
+    &:hover {
+      color: var(--light-color);
+      background-color: var(--color-red);
+
+      .pagination__arrows {
+        svg {
+          path {
+            stroke: var(--color-red);
+          }
+        }
+      }
+    }
+
+    svg {
+      path {
+        transition: all 0.3s;
+      }
+    }
+
+    &--active {
+      background-color: var(--color-red);
+      color: var(--light-color);
+
+      &:hover {
+        color: var(--light-color);
+      }
+    }
+
+    &--mobile {
+      @media screen and (width <=768px) {
+        display: none;
+      }
+    }
+
+    @media screen and (width <=768px) {
+      width: 54px;
+      height: 46px;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 4px;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link,
+  &__arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__arrows {
+    width: 50px;
+    height: 49px;
+
+    &--disabled {
+      pointer-events: none;
+
+      svg {
+        path {
+          stroke: var(--black-color);
+          opacity: 0.7;
+        }
+      }
+
+    }
+
+    @media screen and (width <=768px) {
+      display: none;
+    }
+
+    &:hover {
+      svg {
+        path {
+          stroke: var(--color-red);
+        }
+      }
+    }
+
+    svg {
+      path {
+        transition: all 0.3s;
+        stroke: #B4B4B4;
+      }
+    }
+  }
+
+  &__next {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

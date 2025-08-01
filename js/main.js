@@ -10643,6 +10643,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
 /* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tabs.js */ "./src/js/components/tabs.js");
+
 
 
 
@@ -10755,6 +10757,32 @@ new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".news__slider", {
     el: ".swiper-pagination",
     type: "progressbar"
   }
+});
+
+/***/ }),
+
+/***/ "./src/js/components/tabs.js":
+/*!***********************************!*\
+  !*** ./src/js/components/tabs.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+const tabs = document.querySelectorAll(".tabs__nav-item");
+const contents = document.querySelectorAll(".tabs__panel");
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("tabs__nav-item--active"));
+    tab.classList.add("tabs__nav-item--active");
+    const target = tab.getAttribute("data-target");
+    contents.forEach(content => {
+      if (content.id === target) {
+        content.classList.add("tabs__panel--active");
+      } else {
+        content.classList.remove("tabs__panel--active");
+      }
+    });
+  });
 });
 
 /***/ })

@@ -1,0 +1,101 @@
+.media {
+  padding: 1rem 0 2.5rem;
+}
+@media screen and (width <= 768px) {
+  .media {
+    padding-bottom: 0;
+  }
+}
+.media__breadcrumbs {
+  margin-bottom: 5rem;
+}
+@media screen and (width <= 768px) {
+  .media__breadcrumbs {
+    margin-bottom: 2.5rem;
+  }
+}
+.media__subtitle {
+  margin-bottom: 4rem;
+}
+@media screen and (width <= 768px) {
+  .media__subtitle {
+    margin-bottom: 1.5rem;
+  }
+}
+.media__filter {
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid rgba(180, 180, 180, 0.2);
+}
+@media screen and (width <= 768px) {
+  .media__filter {
+    border-top: transparent;
+    margin-bottom: 1.5rem;
+    padding-top: 0;
+    row-gap: 1.5rem;
+  }
+}
+.media__tabs-head {
+  margin-bottom: 1.5rem;
+}
+.media__list {
+  margin-bottom: 2.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+@media screen and (width <= 1230px) {
+  .media__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (width <= 768px) {
+  .media__list {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (width <= 576px) {
+  .media__list {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.media__list-video {
+  margin-bottom: 2.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 0.5rem;
+}
+@media screen and (width <= 1230px) {
+  .media__list-video {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (width <= 768px) {
+  .media__list-video {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (width <= 576px) {
+  .media__list-video {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+}
+.media__more-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media screen and (width <= 768px) {
+  .media__more-btn {
+    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
+  }
+}/*# sourceMappingURL=media.css.map */

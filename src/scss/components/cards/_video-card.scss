@@ -1,0 +1,141 @@
+.video-card {
+  transition: all 0.150s;
+
+  &:hover {
+    transform: translateY(-4px);
+
+    .video-card__img-wrap {
+      &::before {
+        opacity: 0.2;
+      }
+    }
+
+    .video-card__play-btn {
+      opacity: 1;
+    }
+
+    .video-card__img {
+      transform: scale(1.1);
+    }
+
+    .video-card__title {
+      color: var(--color-red);
+    }
+  }
+
+  &__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 88px;
+    height: 56px;
+    border-radius: 50px;
+    background-color: var(--light-color);
+    transition: opacity 0.150s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 3;
+    cursor: pointer;
+
+    @media screen and (width <=768px) {
+      opacity: 1;
+    }
+  }
+
+  &__play-icon {
+    margin-left: 5px;
+  }
+
+  &__img-wrap {
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 0.25rem;
+
+    @media screen and (width <=768px) {
+      height: 209px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-red);
+      opacity: 0;
+      transition: opacity 0.150s;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+
+      @media screen and (width <=768px) {
+        opacity: 0.2;
+      }
+    }
+
+    @media screen and (width <=768px) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__img {
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: all 0.150s;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__time {
+    position: absolute;
+    padding: 4px 8px;
+    background: rgba(32, 32, 32, 0.6);
+    color: var(--light-color);
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    right: 11px;
+    bottom: 12px;
+    transition: ease-in-out 0.2s;
+    z-index: 2;
+  }
+
+  &__info {
+    color: var(--silver-color);
+    margin-bottom: 1.5rem;
+
+    @media screen and (width <=768px) {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__date {
+    position: relative;
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+
+    &::before {
+      content: '|';
+      color: var(--silver-color);
+      position: absolute;
+      right: -0.5rem;
+    }
+  }
+
+  &__city,
+  &__date {
+    font-family: var(--font-pt);
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    transition: color 0.150s;
+
+    @media screen and (width <=768px) {
+      font-size: 1.5rem;
+    }
+  }
+}

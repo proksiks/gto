@@ -1,0 +1,27 @@
+.select-menu {
+  &__btn-wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-size: 1.125rem;
+    font-family: var(--font-pt);
+    font-weight: 700;
+    line-height: 1.2;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--color-red);
+    }
+  }
+
+  &__btn-img {}
+
+  &__arrow {}
+}

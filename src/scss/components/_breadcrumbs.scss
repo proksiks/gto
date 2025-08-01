@@ -1,0 +1,51 @@
+.breadcrumbs {
+  font-size: 1rem;
+  font-family: var(--font-pt);
+
+  @media screen and (width <= 991px) {
+    font-size: 0.875rem;
+  }
+
+  &__list {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__item {
+    opacity: 0.7;
+    position: relative;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-red);
+    }
+
+    &:not(:last-child) {
+      padding-right: 14px;
+      margin-right: 8px;
+
+      &:after {
+        content: '/';
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &--active {
+      opacity: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}

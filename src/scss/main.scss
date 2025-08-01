@@ -6,6 +6,7 @@
 
 @use "./components/button";
 @use "./components/accordion";
+@use "./components/breadcrumbs";
 @use "./components/header";
 @use "./components/pages/main/hero";
 @use "./components/pages/main/loop";
@@ -16,6 +17,15 @@
 @use "./components/pages/main/map";
 @use "./components/pages/main/faq";
 @use "./components/pages/main/partners";
+@use "./components/pages/media/media";
 
 @use "./components/shared/news";
 @use "./components/shared/article";
+
+@use "./components/ui/filter";
+@use "./components/ui/select-menu";
+@use "./components/ui/tabs";
+@use "./components/ui/pagination";
+
+@use "./components/cards/photo-card";
+@use "./components/cards/video-card";

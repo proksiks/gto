@@ -1,0 +1,90 @@
+.tabs {
+  &__nav {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+
+  &__nav-item {
+    flex: 0 0 auto;
+
+    &--active {
+      position: relative;
+
+      .tabs__nav-btn {
+        color: var(--light-color);
+        background-color: var(--color-red);
+
+        &:hover {
+          color: var(--light-color);
+        }
+      }
+
+      &::after {
+        @media screen and (width <=768px) {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__nav-btn {
+    background-color: var(--light-color);
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 1rem;
+    line-height: 0.8;
+    color: var(--silver-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+
+      color: var(--color-red);
+    }
+
+    @media screen and (width <=768px) {
+      font-size: 20px;
+    }
+  }
+
+  &__panel {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+    transform: translateY(10px);
+
+    &--active {
+      opacity: 1;
+      height: auto;
+      transform: translateY(0);
+      overflow: visible;
+      animation: fadeIn 0.4s ease-out;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}

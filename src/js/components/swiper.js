@@ -51,3 +51,12 @@ new Swiper(".about-disciplines__slider", {
     prevEl: ".about-disciplines__button-prev",
   },
 });
+
+new Swiper(".news-page__slider", {
+  slidesPerView: 'auto',
+  spaceBetween: 8,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+});

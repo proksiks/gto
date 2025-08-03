@@ -1,4 +1,16 @@
 .head-filter {
+  &_desctop {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &_mobile {
+    display: none;
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 .head-filter__search {
   display: flex;
@@ -17,15 +29,17 @@
   background-size: 2rem 2rem;
   background-position: 1rem 0.75rem;
   background-image: url("../img/icons/gray-search.svg");
-
-  @media (max-width: 480px) {
-    display: none;
-  }
+  min-width: auto;
+  max-width: 100%;
+  width: auto;
 }
 .head-filter__search-button {
   height: 3.5rem;
   padding: 0.6875rem 1rem;
   border-radius: 0 0.5rem 0.5rem 0;
+  @media (max-width: 768px) {
+    flex-shrink: 0;
+  }
 }
 .head-filter__search-search {
   display: none;
@@ -50,4 +64,62 @@
   @media (max-width: 480px) {
     padding: 0.75rem;
   }
+}
+
+.head-filter__select {
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+  border: none;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  font-family: var(--font-pt);
+  font-weight: 700;
+
+  background-image: url("../img/icons/calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+  background-position: 0.75rem 0.375rem;
+}
+
+.head-filter__doc,
+.head-filter__date {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: var(--light-color);
+  font-family: var(--font-pt);
+  padding: 1rem 1.5rem 1rem 1rem;
+  border-radius: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: center right 1rem;
+  color: var(--silver-color);
+  margin-top: 0.25rem;
+}
+.head-filter__date {
+  background-image: url("../img/icons/calendar.svg");
+}
+.head-filter__doc {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("../img/icons/arrow-up.svg");
+  }
+}
+.head-filter__reset {
+  font-family: var(--font-pt);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  color: var(--silver-color);
+  gap: 0.25rem;
+  font-weight: 700;
 }

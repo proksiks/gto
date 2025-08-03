@@ -1,4 +1,4 @@
-<div class="head-filter">
+<div class="head-filter head-filter_desctop">
   <form class="head-filter__search">
     <input
       class="head-filter__search-input"
@@ -22,5 +22,38 @@
     <button class="head-filter__tabs-button button button_white">
       Приказы о награждении
     </button>
+    <select name="" id="" class="head-filter__select">
+      <option value="">Дата публикации</option>
+      <option value="">Приказ</option>
+      <option value="">Инструкция</option>
+      <option value="">Нормативный акт</option>
+      <option value="">Закон</option>
+    </select>
   </div>
+</div>
+
+<div class="head-filter head-filter_mobile">
+  <form class="head-filter__search">
+    <input
+      class="head-filter__search-input"
+      type="text"
+      placeholder="Название или номер документа"
+    />
+    <button class="head-filter__search-button button button_red">
+      <span class="head-filter__search-text">Найти</span>
+      <img
+        class="head-filter__search-search"
+        src="img/icons/white-search.svg"
+        alt="Поиск"
+      />
+    </button>
+  </form>
+
+  <button class="head-filter__date">Дата публикации</button>
+  <button class="head-filter__doc">Тип документа</button>
+
+  <button class="head-filter__reset">
+    @include('sprite.html', { class:"head-filter__reset-icon",
+    width: 24, height: 24, name: "close" }) Сбросить фильтр
+  </button>
 </div>

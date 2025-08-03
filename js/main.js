@@ -10686,6 +10686,8 @@ __webpack_require__.r(__webpack_exports__);
 const headerDesctopEl = document.querySelector(".header_desktop");
 const headerBurgrerEl = document.querySelector(".header-mobile__burger");
 const headerMenuEl = document.querySelector(".header-mobile__menu");
+const headerLinksEl = document.querySelectorAll(".header__menu-link");
+const headerMobileLinkEl = document.querySelector(".header-mobile__menu-link");
 let lastPosition = 0;
 let limitPosition = 0;
 let scrolled = false;
@@ -10703,6 +10705,26 @@ headerBurgrerEl.addEventListener("click", event => {
   headerBurgrerEl.classList.toggle("header-mobile__burger_active");
   headerMenuEl.classList.toggle("header-mobile__menu_active");
 });
+if (headerLinksEl.length > 0) {
+  headerLinksEl.forEach(link => {
+    window.location.href.includes(link.href) ? link.classList.add("header__menu-link_active") : link.classList.remove("header__menu-link_active");
+    link.addEventListener("click", () => {
+      headerMenuEl.classList.remove("header-mobile__menu_active");
+      headerBurgrerEl.classList.remove("header-mobile__burger_active");
+      document.body.classList.remove("dis-scroll");
+    });
+  });
+}
+if (headerMobileLinkEl.length > 0) {
+  headerMobileLinkEl.forEach(link => {
+    window.location.href.includes(link.href) ? link.classList.add("header-mobile__menu-link_active") : link.classList.remove("header-mobile__menu-link_active");
+    link.addEventListener("click", () => {
+      headerMenuEl.classList.remove("header-mobile__menu_active");
+      headerBurgrerEl.classList.remove("header-mobile__burger_active");
+      document.body.classList.remove("dis-scroll");
+    });
+  });
+}
 
 /***/ }),
 
@@ -10756,6 +10778,18 @@ new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".news__slider", {
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar"
+  }
+});
+new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".about-disciplines__slider", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  pagination: {
+    el: ".about-disciplines__pagination",
+    type: "progressbar"
+  },
+  navigation: {
+    nextEl: ".about-disciplines__button-next",
+    prevEl: ".about-disciplines__button-prev"
   }
 });
 

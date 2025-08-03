@@ -10792,6 +10792,14 @@ new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".about-disciplines__s
     prevEl: ".about-disciplines__button-prev"
   }
 });
+new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".news-page__slider", {
+  slidesPerView: 'auto',
+  spaceBetween: 8,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar"
+  }
+});
 
 /***/ }),
 

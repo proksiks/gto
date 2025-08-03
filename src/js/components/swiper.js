@@ -38,3 +38,16 @@ new Swiper(".news__slider", {
     type: "progressbar",
   },
 });
+
+new Swiper(".about-disciplines__slider", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  pagination: {
+    el: ".about-disciplines__pagination",
+    type: "progressbar",
+  },
+  navigation: {
+    nextEl: ".about-disciplines__button-next",
+    prevEl: ".about-disciplines__button-prev",
+  },
+});

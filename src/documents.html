@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html', { "title": "Документы" })
+
+  <body>
+    <div>
+      @include('partials/header.html')
+      <main class="main">
+        <div class="documents-page">
+          <div class="documents-page__container container">
+            <div class="documents-page__top">
+              <div class="documents-page__breadcrumbs breadcrumbs">
+                <ul class="breadcrumbs__list">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="/">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item breadcrumbs__item--active">
+                    <span>Вопрос-ответ</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="documents-page__head">
+              <h1 class="documents-page__title subtitle">Вопрос-ответ</h1>
+            </div>
+
+            <div class="documents-page__filters">
+              @include('partials/components/head-filter-docs.html')
+            </div>
+
+            <div class="documents-page__wrapper">
+              <div class="documents-page__count">
+                <span>215</span> документов найдено
+              </div>
+
+              <div class="documents-page__list">
+                <div class="documents-page__item">
+                  <div class="documents-page__item-info"></div>
+                  <div class="documents-page__item-title">
+                    Приказ Министерства спорта РФ «О награждении золотым знаком
+                    отличия ВФСК ГТО»
+                  </div>
+                  <a
+                    href="#"
+                    class="documents-page__item-link button button_border"
+                  >
+                    Скачать
+                  </a>
+                </div>
+              </div>
+
+              <button class="documents-page__more button button_red">Показать еще</button>
+              @include('partials/components/pagination.html')
+            </div>
+          </div>
+        </div>
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

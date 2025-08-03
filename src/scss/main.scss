@@ -31,6 +31,10 @@
 @use "./components/pages/about/about-disciplines";
 // About
 
+// News
+@use "./components/pages/news/detail/news-detail.scss";
+// News
+
 @use "./components/shared/news";
 @use "./components/shared/article";
 

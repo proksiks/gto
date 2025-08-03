@@ -10,6 +10,9 @@
   display: flex;
   justify-content: space-between;
 }
+.main-partners__wrapper {
+  position: relative;
+}
 .main-partners__items {
   margin-top: 3.5rem;
   &::before,

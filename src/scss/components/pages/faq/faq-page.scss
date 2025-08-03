@@ -1,0 +1,26 @@
+.faq__breadcrumbs {
+  padding-top: 1rem;
+}
+.faq__head {
+  margin-top: 5rem;
+  @media (max-width: 480px) {
+    margin-top: 2.5rem;
+  }
+}
+.faq__filters {
+  margin-top: 4rem;
+  @media (max-width: 480px) {
+    margin-top: 1.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    .head-filter__search,
+    .head-filter__tabs {
+      padding: 0 1rem;
+    }
+  }
+}
+.faq__more {
+  text-align: center;
+  width: 100%;
+  margin-top: 2.5rem;
+}

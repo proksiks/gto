@@ -36,8 +36,14 @@
 @use "./components/pages/news/detail/news-detail.scss";
 // News
 
+// faq
+@use "./components/pages/faq/faq-page.scss";
+// faq
+
 @use "./components/shared/news";
 @use "./components/shared/article";
+@use "./components/shared/shared-pagination";
+@use "./components/shared/head-filters";
 
 @use "./components/ui/filter";
 @use "./components/ui/select-menu";

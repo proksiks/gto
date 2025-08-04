@@ -43,7 +43,6 @@
   border-radius: 1rem;
   padding: 1.5rem;
   color: var(--light-color);
-
   @media (max-width: 480px) {
     min-height: 8rem;
     flex-direction: row;
@@ -61,6 +60,10 @@
     background-repeat: no-repeat;
     opacity: 0.15;
     pointer-events: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../img/shared/pattern.png");
   }
 
   // .standards__item_red

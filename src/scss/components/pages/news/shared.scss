@@ -70,6 +70,11 @@
     margin-bottom: 1.5rem;
   }
 }
+.news-page__selects {
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
 .news-page__select {
   background-color: transparent;
   border: none;
@@ -79,16 +84,38 @@
   cursor: pointer;
   position: relative;
   z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center right 1rem;
 
   @media (max-width: 480px) {
     width: 100%;
     background-color: var(--light-color);
     padding: 1rem;
     border-radius: 0.5rem;
+    color: var(--silver-color);
+    text-align: left;
   }
   & + & {
     @media (max-width: 480px) {
       margin-top: 0.5rem;
+    }
+  }
+
+
+  &_date {
+    background-image: url("../img/icons/calendar.svg");
+  }
+  &_city {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%) rotate(-90deg);
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url("../img/icons/arrow-up.svg");
     }
   }
 }

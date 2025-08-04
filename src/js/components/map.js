@@ -1,4 +1,5 @@
 import theme from "./map.theme.js";
+import data from "./map.data.js";
 
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");

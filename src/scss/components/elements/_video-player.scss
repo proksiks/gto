@@ -1,0 +1,45 @@
+.video-player {
+  position: relative;
+  border-radius: 1rem;
+
+  &__video {
+    width: 100%;
+  }
+
+  &__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 132px;
+    height: 84px;
+    border-radius: 50px;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    @media screen and (width <=768px) {
+      width: 88px;
+      height: 56px;
+    }
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 30px solid var(--dark-color);
+      margin-left: 10px;
+    }
+  }
+}

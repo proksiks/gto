@@ -44,6 +44,10 @@
 @use "./components/pages/documents/documents-page.scss";
 // docs
 
+// Standards
+@use "./components/pages/standards/standards-page.scss";
+// Standards
+
 @use "./components/shared/news";
 @use "./components/shared/article";
 @use "./components/shared/shared-pagination";

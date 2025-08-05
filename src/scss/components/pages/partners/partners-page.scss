@@ -1,0 +1,64 @@
+.partners {
+  padding: 1rem 0 2.5rem;
+
+  @media screen and (width <=768px) {
+    padding-bottom: 0;
+  }
+
+  &__breadcrumbs {
+    margin-bottom: 5rem;
+
+    @media screen and (width <=768px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 4rem;
+
+    @media screen and (width <=768px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+
+    @media screen and (width <=1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (width <=990px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (width <=768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.25rem;
+    }
+  }
+
+  &__item {
+    background-color: var(--light-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 194px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (width <=768px) {
+      height: 90px;
+      min-height: auto;
+    }
+  }
+
+  &__img {
+    @media screen and (width <=768px) {
+      height: 65px;
+      object-fit: contain;
+    }
+  }
+}

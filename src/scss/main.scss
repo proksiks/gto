@@ -22,7 +22,7 @@
 @use "./components/pages/main/map";
 @use "./components/pages/main/faq";
 @use "./components/pages/main/partners";
-@use "./components/pages/media/media";
+
 // Main
 
 // About
@@ -47,6 +47,14 @@
 // Standards
 @use "./components/pages/standards/standards-page.scss";
 // Standards
+
+//Media
+@use "./components/pages/media/media";
+//Media
+
+//Partners
+@use "./components/pages/partners/partners-page";
+//Partners
 
 @use "./components/shared/news";
 @use "./components/shared/article";

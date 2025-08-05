@@ -67,6 +67,7 @@
 }
 
 .head-filter__select {
+  flex-shrink: 0;
   cursor: pointer;
   position: relative;
   margin-left: auto;

@@ -23,10 +23,12 @@ async function initMap() {
   );
 }
 
-if(mapEl){
+if (mapEl) {
   initMap();
 }
 
-layerEl.addEventListener("click", () => {
-  layerEl.classList.toggle("main-map__body-layer_hide");
-});
+if (layerEl) {
+  layerEl.addEventListener("click", () => {
+    layerEl.classList.toggle("main-map__body-layer_hide");
+  });
+}

@@ -23,7 +23,9 @@ async function initMap() {
   );
 }
 
-initMap();
+if(mapEl){
+  initMap();
+}
 
 layerEl.addEventListener("click", () => {
   layerEl.classList.toggle("main-map__body-layer_hide");

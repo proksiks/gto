@@ -10732,6 +10732,17 @@ if (headerMobileLinkEl.length > 0) {
 
 /***/ }),
 
+/***/ "./src/js/components/map.data.js":
+/*!***************************************!*\
+  !*** ./src/js/components/map.data.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+console.log("DEV BY TG-@ProKsiKzzz");
+
+/***/ }),
+
 /***/ "./src/js/components/map.js":
 /*!**********************************!*\
   !*** ./src/js/components/map.js ***!
@@ -10740,6 +10751,8 @@ if (headerMobileLinkEl.length > 0) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_theme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.theme.js */ "./src/js/components/map.theme.js");
+/* harmony import */ var _map_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.data.js */ "./src/js/components/map.data.js");
+
 
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
@@ -10759,7 +10772,9 @@ async function initMap() {
     customization: _map_theme_js__WEBPACK_IMPORTED_MODULE_0__["default"]
   }));
 }
-initMap();
+if (mapEl) {
+  initMap();
+}
 layerEl.addEventListener("click", () => {
   layerEl.classList.toggle("main-map__body-layer_hide");
 });

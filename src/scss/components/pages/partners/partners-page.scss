@@ -48,11 +48,52 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    &:hover {
+      .partners__item-info {
+        opacity: 1;
+      }
+    }
 
     @media screen and (width <=768px) {
       height: 90px;
       min-height: auto;
     }
+  }
+
+  &__item-info {
+    background-color: var(--color-red);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: var(--light-color);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    @media screen and (width <=768px) {
+      padding: 1rem;
+    }
+  }
+
+  &__item-text {
+    font-family: var(--font-pt);
+    font-size: 0.875rem;
+    text-align: center;
+
+    @media screen and (width <=768px) {
+      display: none;
+    }
+  }
+
+  &__item-link {
+    margin-top: auto;
+    text-align: center;
+    text-decoration: underline;
   }
 
   &__img {

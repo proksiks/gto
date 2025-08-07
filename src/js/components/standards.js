@@ -2,7 +2,6 @@ const stepButtonsEl = document.querySelectorAll(".standards-page__step");
 const standardsHeadersEl = document.querySelectorAll(
   ".standards-page__accordion-header"
 );
-let headerHeight = document.querySelector(".header").offsetHeight;
 
 stepButtonsEl.forEach((element) => {
   element.addEventListener("click", () => {
@@ -35,7 +34,7 @@ standardsHeadersEl.forEach((header) => {
 
       setTimeout(() => {
         window.scrollTo({
-          top: event.target.offsetTop - headerHeight - 20,
+          top: event.target.offsetTop - getHeaderHeight() - 20,
           behavior: "smooth",
         });
       }, 301);
@@ -44,3 +43,12 @@ standardsHeadersEl.forEach((header) => {
     }
   });
 });
+
+
+const getHeaderHeight = () => {
+  if(window.innerWidth < 768) {
+    return document.querySelector(".header_mobile").offsetHeight;
+  } else {
+    return document.querySelector(".header_desktop").offsetHeight;
+  }
+}

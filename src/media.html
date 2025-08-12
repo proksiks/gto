@@ -39,13 +39,23 @@
           <div class="media__filter filter">
             <div class="filter__selects">
               <div class="select-menu">
-                <div class="select-menu__btn-wrapper">
-                  <button class="select-menu__btn">
-                    <img class="select-menu__btn-img" src="img/svg/location.svg" alt="Локация">
-                    Дата публикации
+                <div class="select-menu__wrapper" id="calendar-wrapper">
+                  <img class="select-menu__img" src="img/svg/calendar.svg" alt="Календарь">
+
+                  <input class="select-menu__input" type="text" id="date-input" placeholder="Выберите дату" readonly>
+
+                  <button class="select-menu__clear">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
                   </button>
 
-                  <img class="select-menu__arrow" src="img/svg/arrow-down.svg" alt="Иконка">
+                  <svg class="select-menu__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 10L12 16L6 10" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
                 </div>
 
                 <!-- <ul class="select-menu__options select-menu__options--grey">
@@ -58,11 +68,10 @@
               <div class="select-menu">
                 <div class="select-menu__btn-wrapper">
                   <button class="select-menu__btn">
-                    <img class="select-menu__btn-img" src="img/svg/calendar.svg" alt="Календарь">
+                    <img class="select-menu__img" src="img/svg/location.svg" alt="Локация">
                     Санкт-Петербург
+                    <img class="select-menu__arrow" src="img/svg/arrow-down.svg" alt="Иконка">
                   </button>
-
-                  <img class="select-menu__arrow" src="img/svg/arrow-down.svg" alt="Иконка">
                 </div>
 
                 <!-- <ul class="select-menu__options select-menu__options--grey">

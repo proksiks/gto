@@ -65,6 +65,7 @@
     "just-validate": "^4.3.0",
     "rellax": "^1.12.1",
     "simplebar": "^6.3.2",
+    "slim-select": "^2.12.1",
     "swiped-events": "^1.2.0",
     "swiper": "^11.2.10"
   }

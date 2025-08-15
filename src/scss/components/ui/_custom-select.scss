@@ -1,0 +1,169 @@
+.custom-select {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+  }
+
+  &__arrow {
+    transition: all 0.3s;
+    flex-shrink: 0;
+
+    &--active {
+      transform: rotate(180deg); // Сохраняем translateY
+
+      path {
+        stroke: var(--color-black);
+      }
+    }
+  }
+
+  &__clear {
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+
+    path {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      path {
+        stroke: var(--color-red);
+      }
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.ss-placeholder {
+  font-family: var(--font-pt);
+  font-weight: 700;
+  line-height: 1;
+  color: #202020 !important;
+  text-transform: none !important;
+  font-size: 18px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ss-main {
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.ss-single-selected {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #CD313C;
+}
+
+.ss-arrow {
+  display: none !important;
+}
+
+.ss-content {
+  border: 1px solid rgba(180, 180, 180, 0.2);
+  border-radius: 8px;
+  width: 240px !important;
+  max-width: 240px;
+}
+
+.ss-single {
+  font-family: var(--font-pt);
+  font-weight: 700;
+  line-height: 1;
+  font-size: 18px;
+  color: #202020 !important;
+}
+
+.ss-option {
+  font-family: var(--font-pt);
+  font-weight: 700;
+  line-height: 1;
+  color: #202020 !important;
+  border-radius: 4px;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &:hover {
+    background-color: rgba(180, 180, 180, 0.2) !important;
+  }
+}
+
+.ss-list {
+  padding: 4px;
+}
+
+.ss-selected {
+  background-color: transparent !important;
+  color: #CD313C !important;
+}
+
+/* Основные стили для скроллбара */
+.ss-content .ss-list {
+  scrollbar-width: thin;
+  /* Для Firefox */
+  scrollbar-color: #CD313C transparent;
+  /* Цвет ползунка и трека */
+  max-height: 300px;
+  /* Фиксированная высота списка */
+  overflow-y: auto;
+}
+
+/* Убираем стрелки у скроллбара (для WebKit) */
+.ss-content .ss-list::-webkit-scrollbar-button {
+  display: none;
+  /* Скрываем кнопки вверх/вниз */
+  height: 0;
+  width: 0;
+}
+
+/* Стили для WebKit (Chrome, Safari, Edge) */
+.ss-content .ss-list::-webkit-scrollbar {
+  width: 4px;
+  /* Ширина ползунка */
+  height: 4px;
+  /* Для горизонтального скролла (если нужно) */
+}
+
+.ss-content .ss-list::-webkit-scrollbar-thumb {
+  background-color: #CD313C;
+  /* Цвет ползунка */
+  border-radius: 4px;
+  /* Скругление углов */
+  height: 36px;
+  /* Высота ползунка */
+}
+
+.ss-content .ss-list::-webkit-scrollbar-track {
+  background: transparent;
+  /* Прозрачный фон трека */
+}
+
+/* Для Firefox (убираем стрелки) */
+.ss-content .ss-list {
+  scrollbar-width: thin;
+  /* auto | thin | none */
+  scrollbar-color: #CD313C transparent;
+  /* thumb и track */
+}

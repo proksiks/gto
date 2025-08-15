@@ -47,3 +47,38 @@ clearButton.addEventListener("click", function () {
   dateInput.style.maxWidth = "210px";
   clearButton.classList.remove("select-menu__clear--active");
 });
+
+//Кастомный селект
+import SlimSelect from "slim-select";
+const arrowSelect = document.querySelector(".custom-select__arrow");
+const clearButtonSelect = document.querySelector(".custom-select__clear");
+
+const select = new SlimSelect({
+  select: "#my-select",
+  settings: {
+    placeholderText: "Регион",
+    showSearch: false,
+    showArrow: false,
+    contentLocation: document.getElementById("custom-select"),
+  },
+  events: {
+    afterClose: () => {
+      arrowSelect.classList.remove("custom-select__arrow--active");
+    },
+    afterOpen: () => {
+      arrowSelect.classList.add("custom-select__arrow--active");
+    },
+    afterChange: (newVal) => {
+      if (newVal.length > 0 && newVal[0].value !== "") {
+        clearButtonSelect.classList.add("custom-select__clear--active");
+      } else {
+        clearButtonSelect.classList.remove("custom-select__clear--active");
+      }
+    },
+  },
+});
+
+clearButtonSelect.addEventListener("click", function (e) {
+  e.stopPropagation();
+  select.setSelected([]);
+});

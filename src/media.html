@@ -38,6 +38,7 @@
 
           <div class="media__filter filter">
             <div class="filter__selects">
+
               <div class="select-menu">
                 <div class="select-menu__wrapper" id="calendar-wrapper">
                   <img class="select-menu__img" src="img/svg/calendar.svg" alt="Календарь">
@@ -57,28 +58,43 @@
                       stroke-linejoin="round" />
                   </svg>
                 </div>
-
-                <!-- <ul class="select-menu__options select-menu__options--grey">
-                  <li class="select-menu__option">По популярности</li>
-                  <li class="select-menu__option">По наличию</li>
-                </ul> -->
               </div>
 
+              <div class="custom-select" id="custom-select">
+                <div class="custom-select__wrapper">
+                  <img class="custom-select__img" src="img/svg/location.svg" alt="Локация">
 
-              <div class="select-menu">
-                <div class="select-menu__btn-wrapper">
-                  <button class="select-menu__btn">
-                    <img class="select-menu__img" src="img/svg/location.svg" alt="Локация">
-                    Санкт-Петербург
-                    <img class="select-menu__arrow" src="img/svg/arrow-down.svg" alt="Иконка">
+                  <select class="custom-select" id="my-select">
+                    <option class="custom-select__placeholder" data-placeholder="true"></option>
+                    <option value="1">Москва</option>
+                    <option value="2">Московская область</option>
+                    <option value="3">Санкт-Петербург</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                  </select>
+
+                  <button class="custom-select__clear">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
                   </button>
-                </div>
 
-                <!-- <ul class="select-menu__options select-menu__options--grey">
-                  <li class="select-menu__option">По популярности</li>
-                  <li class="select-menu__option">По наличию</li>
-                </ul> -->
+                  <svg class="custom-select__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 10L12 16L6 10" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
               </div>
+
             </div>
 
             <button class="filter__remove">

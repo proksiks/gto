@@ -8,15 +8,17 @@
   }
 
   &__clear {
-    display: none;
-    width: 24px;
-    height: 24px;
+    display: flex;
+    width: 0;
+    height: 0;
     justify-content: center;
     align-items: center;
     position: absolute;
     right: 20px;
     z-index: 3;
     top: 50%;
+    opacity: 0;
+    visibility: hidden;
     transform: translateY(-50%);
 
     path {
@@ -30,7 +32,10 @@
     }
 
     &--active {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
+      width: 24px;
+      height: 24px;
     }
   }
 

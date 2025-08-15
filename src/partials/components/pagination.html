@@ -1,12 +1,14 @@
 <div class="pagination">
-  <div class="pagination-button">
-    <button class="pagination-button-prev">
-      @include('../../partials/components/sprite.html', {
-      class:"about-disciplines__button-prev-icon", width: 32, height: 32, name:
-      "arrow-up" })
-    </button>
-  </div>
   <ul class="pagination-list">
+    <li class="pagination-item pagination-item_edge">
+      <div class="pagination-button">
+        <button class="pagination-button-prev">
+          @include('../../partials/components/sprite.html', {
+          class:"about-disciplines__button-prev-icon", width: 32, height: 32,
+          name: "arrow-up" })
+        </button>
+      </div>
+    </li>
     <li class="pagination-item">
       <a class="pagination-link button button_red" href="#"> 1 </a>
     </li>
@@ -31,12 +33,14 @@
     <li class="pagination-item">
       <a class="pagination-link button" href="#">124</a>
     </li>
+    <li class="pagination-item pagination-item_edge">
+      <div class="pagination-button">
+        <button class="pagination-button-next">
+          @include('../../partials/components/sprite.html', {
+          class:"about-disciplines__button-prev-icon", width: 32, height: 32,
+          name: "arrow-up" })
+        </button>
+      </div>
+    </li>
   </ul>
-  <div class="pagination-button">
-    <button class="pagination-button-next">
-      @include('../../partials/components/sprite.html', {
-      class:"about-disciplines__button-prev-icon", width: 32, height: 32, name:
-      "arrow-up" })
-    </button>
-  </div>
 </div>

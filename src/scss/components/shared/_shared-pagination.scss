@@ -34,8 +34,9 @@
 .pagination-list {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   @media (max-width: 480px) {
-    width: 100%;
     gap: 0.25rem;
   }
 }
@@ -45,6 +46,18 @@
   }
   &_desctop {
     display: block;
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+  &:first-child {
+    margin-right: auto;
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+  &:last-child {
+    margin-left: auto;
     @media (max-width: 480px) {
       display: none;
     }

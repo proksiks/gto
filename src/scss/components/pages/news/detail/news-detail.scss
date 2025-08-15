@@ -128,13 +128,19 @@
   padding: 0.5rem 1rem;
 }
 .news-detail__gallery-items {
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   margin-top: 1.5rem;
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.25rem;
+  }
+
+  &_active {
+    display: grid;
+  }
+  &_hide {
+    display: none;
   }
 }
 .news-detail__gallery-more {
@@ -156,9 +162,12 @@
   }
 }
 .news-detail__gallery-img {
+  width: 100%;
+  object-fit: cover;
   display: block;
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
+  max-height: 13.25rem;
 }
 .news-detail__popular {
   margin-top: 7.5rem;

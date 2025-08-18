@@ -71,10 +71,18 @@
   }
 }
 .news-page__selects {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   @media (max-width: 480px) {
     width: 100%;
   }
 }
+
+.news-page__selects .custom-select {
+  min-width: 13.125rem;
+}
+
 .news-page__select {
   background-color: transparent;
   border: none;
@@ -100,7 +108,6 @@
       margin-top: 0.5rem;
     }
   }
-
 
   &_date {
     background-image: url("../img/icons/calendar.svg");
@@ -153,9 +160,21 @@
   .news__article {
     padding: 1.5rem 0 2.5rem 0;
     border-top: 1px solid rgba(180, 180, 180, 0.2);
+    transition: background-color 0.3s ease-in-out;
 
     &:last-child {
       border-bottom: 1px solid rgba(180, 180, 180, 0.2);
+    }
+
+    &:hover {
+      background-color: white;
+      border-radius: 1rem;
+      .news__article-info {
+        transform: translateX(1.5rem);
+      }
+      .news__article-arrow {
+        transform: translateX(-1.5rem);
+      }
     }
   }
 

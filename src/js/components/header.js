@@ -3,6 +3,7 @@ const headerBurgrerEl = document.querySelector(".header-mobile__burger");
 const headerMenuEl = document.querySelector(".header-mobile__menu");
 const headerLinksEl = document.querySelectorAll(".header__menu-link");
 const headerMobileLinkEl = document.querySelector(".header-mobile__menu-link");
+const allHeaderItemsEl = document.querySelectorAll(".header__menu-item");
 
 let lastPosition = 0;
 let limitPosition = 0;
@@ -35,6 +36,12 @@ if (headerLinksEl.length > 0) {
       headerBurgrerEl.classList.remove("header-mobile__burger_active");
       document.body.classList.remove("dis-scroll");
     });
+
+    link.innerHTML = `<span class="header__menu-link_text">${link.textContent}</span>`;
+
+    const dublicate = link.appendChild(document.createElement("span"));
+    dublicate.textContent = link.textContent;
+    dublicate.classList.add("header__menu-link_dublicate");
   });
 }
 

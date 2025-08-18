@@ -145,8 +145,121 @@
           <div class="news-page__container container">
             <div class="news-page__filters">
               <div class="news-page__selects">
-                <button class="news-page__select news-page__select_date">Дата публикации</button>
-                <button class="news-page__select news-page__select_city">Город</button>
+                <div class="select-menu">
+                  <div class="select-menu__wrapper" id="calendar-wrapper">
+                    <img
+                      class="select-menu__img"
+                      src="img/svg/calendar.svg"
+                      alt="Календарь"
+                    />
+
+                    <input
+                      class="select-menu__input"
+                      type="text"
+                      id="date-input"
+                      placeholder="Выберите дату"
+                      readonly
+                    />
+
+                    <button class="select-menu__clear">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 7L7 17M7 7L17 17"
+                          stroke="#B4B4B4"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    <svg
+                      class="select-menu__arrow"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 10L12 16L6 10"
+                        stroke="#B4B4B4"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="custom-select" id="custom-select">
+                  <div class="custom-select__wrapper">
+                    <img
+                      class="custom-select__img"
+                      src="img/svg/location.svg"
+                      alt="Локация"
+                    />
+
+                    <select class="custom-select" id="my-select">
+                      <option
+                        class="custom-select__placeholder"
+                        data-placeholder="true"
+                      ></option>
+                      <option value="1">Москва</option>
+                      <option value="2">Московская область</option>
+                      <option value="3">Санкт-Петербург</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                      <option value="4">Ленинградская область</option>
+                    </select>
+
+                    <button class="custom-select__clear">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 7L7 17M7 7L17 17"
+                          stroke="#B4B4B4"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    <svg
+                      class="custom-select__arrow"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 10L12 16L6 10"
+                        stroke="#B4B4B4"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
               <button class="news-page__reset">
                 <img src="img/icons/red-cross.svg" alt="Крест" />Сбросить фильтр

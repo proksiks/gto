@@ -94,6 +94,8 @@
   }
 }
 .standards__image {
+  position: relative;
+  z-index: 1;
   margin-top: auto;
   display: flex;
   justify-content: flex-end;

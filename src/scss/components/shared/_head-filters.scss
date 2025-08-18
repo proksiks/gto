@@ -4,20 +4,100 @@
       display: none;
     }
   }
+
   &_mobile {
     display: none;
+
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
     }
   }
+
+  &__select-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    max-width: 348px;
+    width: 100%;
+    height: 56px;
+    position: relative;
+    padding: 0 16px;
+    border-radius: 0 8px 8px 0;
+
+    .ss-list {
+      width: 100%;
+    }
+  }
+
+  &__select-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__select-arrow {
+    transition: all 0.3s;
+
+    &--active {
+      transform: rotate(180deg); // Сохраняем translateY
+
+      path {
+        stroke: var(--color-black);
+      }
+    }
+  }
+
+  &__select-clear {
+    display: flex;
+    width: 0;
+    height: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+
+    path {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      path {
+        stroke: var(--color-red);
+      }
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .ss-placeholder {
+    color: #B4B4B4 !important;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    font-family: var(--font-pt);
+  }
+
+  .ss-list {
+    max-width: 348px !important;
+  }
+
+  .ss-main .ss-values .ss-single {
+    padding-left: 16px !important;
+  }
 }
+
 .head-filter__search {
   display: flex;
   align-items: center;
   gap: 0.125rem;
   width: 100%;
 }
+
 .head-filter__search-input {
   padding: 1rem 1rem 1rem 4rem;
   height: 3.5rem;
@@ -33,25 +113,31 @@
   max-width: 100%;
   width: auto;
 }
+
 .head-filter__search-button {
   height: 3.5rem;
   padding: 0.6875rem 1rem;
   border-radius: 0 0.5rem 0.5rem 0;
+
   @media (max-width: 768px) {
     flex-shrink: 0;
   }
 }
+
 .head-filter__search-search {
   display: none;
+
   @media (max-width: 480px) {
     display: block;
   }
 }
+
 .head-filter__search-text {
   @media (max-width: 480px) {
     display: none;
   }
 }
+
 .head-filter__tabs {
   margin-top: 1rem;
   display: flex;
@@ -59,8 +145,10 @@
   gap: 0.5rem;
   overflow: auto;
 }
+
 .head-filter__tabs-button {
   white-space: nowrap;
+
   @media (max-width: 480px) {
     padding: 0.75rem;
   }
@@ -98,11 +186,14 @@
   color: var(--silver-color);
   margin-top: 0.25rem;
 }
+
 .head-filter__date {
   background-image: url("../img/icons/calendar.svg");
 }
+
 .head-filter__doc {
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -114,6 +205,7 @@
     background-image: url("../img/icons/arrow-up.svg");
   }
 }
+
 .head-filter__reset {
   font-family: var(--font-pt);
   margin-top: 1rem;

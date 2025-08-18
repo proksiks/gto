@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+@include('partials/head.html', { "title": "ГТО в РЕГИОНАХ" })
+
+<body>
+  <div>
+    @include('partials/header.html')
+    <main class="main">
+      <div class="regions">
+        <div class="container">
+          <div class="regions__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="/">Главная</a>
+              </li>
+
+              <li class="breadcrumbs__item breadcrumbs__item--active">
+                <span>Регионы</span>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="regions__subtitle subtitle">ГТО в РЕГИОНАХ</h1>
+
+          <div class="regions__tabs-head">
+            <div class="tabs">
+              <div class="tabs__head">
+                <ul class="tabs__nav">
+                  <li class="tabs__nav-item tabs__nav-item--active" data-target="1">
+                    <button class="tabs__nav-btn">Все</button>
+                  </li>
+                  <li class="tabs__nav-item" data-target="2">
+                    <button class="tabs__nav-btn">Региональный оператор</button>
+                  </li>
+                  <li class="tabs__nav-item" data-target="3">
+                    <button class="tabs__nav-btn">Центр тестирования</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="regions__tabs-content tabs">
+            <ul class="tabs__content">
+              <li class="tabs__panel tabs__panel--active" id="1">
+                <div class="main-map__body main-map__body_desctop regions__map">
+                  <div class="main-map__body-layer">
+                    Нажмите для взаимодействия с&nbsp;картой
+                  </div>
+                  <div class="main-map__map" id="map"></div>
+                </div>
+
+                <div class="regions__head-filter head-filter">
+                  <form class="head-filter__search">
+                    <input class="head-filter__search-input" type="text" placeholder="Введите вопрос">
+
+                    <div class="head-filter__select-wrapper">
+                      <select class="head-filter__select-menu" id="search-select">
+                        <option class="custom-select__placeholder" data-placeholder="true"></option>
+                        <option value="1">Москва</option>
+                        <option value="2">Московская область</option>
+                        <option value="3">Санкт-Петербург</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                        <option value="4">Ленинградская область</option>
+                      </select>
+
+                      <button class="head-filter__select-clear">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </button>
+
+                      <svg class="head-filter__select-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 10L12 16L6 10" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </form>
+                </div>
+
+                <ul class="regions__list">
+                  <li class="regions__item">
+                    <div class="regions__item-left">
+                      <span class="regions__item-region">
+                        <img class="regions__item-region-img" src="img/svg/location.svg" alt="Иконка">
+                        <span>Смоленская область</span>
+                      </span>
+
+                      <p class="regions__item-adress">214019, г. Смоленск, ул. Тенишивой, д. 33</p>
+
+                      <div class="regions__item-contacts">
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Телефон:</p>
+                          <a class="regions__item-contacts-link" href="tel:+74812387-05">8 (4812) 38-78-05</a>
+                        </div>
+
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Почта:</p>
+                          <a class="regions__item-contacts-link"
+                            href="mailto:sport@admin-smolensk.ru">sport@admin-smolensk.ru</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="regions__item-link" href="#">Новости в регионе</a>
+                  </li>
+
+                  <li class="regions__item">
+                    <div class="regions__item-left">
+                      <span class="regions__item-region">
+                        <img class="regions__item-region-img" src="img/svg/location.svg" alt="Иконка">
+                        <span>Смоленская область</span>
+                      </span>
+
+                      <p class="regions__item-adress">214019, г. Смоленск, ул. Тенишивой, д. 33</p>
+
+                      <div class="regions__item-contacts">
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Телефон:</p>
+                          <a class="regions__item-contacts-link" href="tel:+74812387-05">8 (4812) 38-78-05</a>
+                        </div>
+
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Почта:</p>
+                          <a class="regions__item-contacts-link"
+                            href="mailto:sport@admin-smolensk.ru">sport@admin-smolensk.ru</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="regions__item-link" href="#">Новости в регионе</a>
+                  </li>
+
+                  <li class="regions__item">
+                    <div class="regions__item-left">
+                      <span class="regions__item-region">
+                        <img class="regions__item-region-img" src="img/svg/location.svg" alt="Иконка">
+                        <span>Смоленская область</span>
+                      </span>
+
+                      <p class="regions__item-adress">214019, г. Смоленск, ул. Тенишивой, д. 33</p>
+
+                      <div class="regions__item-contacts">
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Телефон:</p>
+                          <a class="regions__item-contacts-link" href="tel:+74812387-05">8 (4812) 38-78-05</a>
+                        </div>
+
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Почта:</p>
+                          <a class="regions__item-contacts-link"
+                            href="mailto:sport@admin-smolensk.ru">sport@admin-smolensk.ru</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="regions__item-link" href="#">Новости в регионе</a>
+                  </li>
+
+                  <li class="regions__item">
+                    <div class="regions__item-left">
+                      <span class="regions__item-region">
+                        <img class="regions__item-region-img" src="img/svg/location.svg" alt="Иконка">
+                        <span>Смоленская область</span>
+                      </span>
+
+                      <p class="regions__item-adress">214019, г. Смоленск, ул. Тенишивой, д. 33</p>
+
+                      <div class="regions__item-contacts">
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Телефон:</p>
+                          <a class="regions__item-contacts-link" href="tel:+74812387-05">8 (4812) 38-78-05</a>
+                        </div>
+
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Почта:</p>
+                          <a class="regions__item-contacts-link"
+                            href="mailto:sport@admin-smolensk.ru">sport@admin-smolensk.ru</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="regions__item-link" href="#">Новости в регионе</a>
+                  </li>
+
+                  <li class="regions__item">
+                    <div class="regions__item-left">
+                      <span class="regions__item-region">
+                        <img class="regions__item-region-img" src="img/svg/location.svg" alt="Иконка">
+                        <span>Смоленская область</span>
+                      </span>
+
+                      <p class="regions__item-adress">214019, г. Смоленск, ул. Тенишивой, д. 33</p>
+
+                      <div class="regions__item-contacts">
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Телефон:</p>
+                          <a class="regions__item-contacts-link" href="tel:+74812387-05">8 (4812) 38-78-05</a>
+                        </div>
+
+                        <div class="regions__item-contact">
+                          <p class="regions__item-contacts-title">Почта:</p>
+                          <a class="regions__item-contacts-link"
+                            href="mailto:sport@admin-smolensk.ru">sport@admin-smolensk.ru</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="regions__item-link" href="#">Новости в регионе</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="tabs__panel" id="2">
+                2
+              </li>
+              <li class="tabs__panel" id="3">
+                3
+              </li>
+            </ul>
+
+            <button class="regions__more-btn button button_red">Показать еще</button>
+
+
+            <div class="regions__pagination pagination">
+              <button class="pagination__arrows pagination__arrows--disabled pagination__prev">
+                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 3L5.5 8.5L10.5 14" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <ul class="pagination__list">
+                <li class="pagination__item pagination__item--active"><a class="pagination__link" href="#">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+                <li class="pagination__item"><a class="pagination__link pagination__link--active" href="#">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#">4</a></li>
+                <li class="pagination__item pagination__item--mobile"><a class="pagination__link" href="#">5</a></li>
+                <li class="pagination__item pagination__item--mobile"><a class="pagination__link" href="#">6</a></li>
+                <li class="pagination__item-ellipsis">...</li>
+                <li class="pagination__item"><a class="pagination__link" href="#">124</a></li>
+              </ul>
+
+              <button class="pagination__arrows pagination__next">
+                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 3L5.5 8.5L10.5 14" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

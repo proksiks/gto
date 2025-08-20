@@ -48,14 +48,13 @@
   }
 
   &.ss-content {
-    width: 240px;
-    max-width: 240px;
+    width: 240px !important;
+    max-width: 240px !important;
   }
 
   .ss-list {
     width: 100%;
   }
-
 }
 
 .ss-placeholder {

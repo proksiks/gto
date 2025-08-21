@@ -30,14 +30,10 @@ const mapEl = document.getElementById("map");
 async function initMap() {
   await ymaps3.ready;
 
-  const {
-    YMap,
-    YMapDefaultSchemeLayer,
-    YMapDefaultFeaturesLayer,
-  } = ymaps3;
+  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps3;
 
-  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', [
-    '@yandex/ymaps3-default-ui-theme@0.0.19'
+  ymaps3.import.registerCdn("https://cdn.jsdelivr.net/npm/{package}", [
+    "@yandex/ymaps3-default-ui-theme@0.0.19",
   ]);
 
   const { YMapPopupMarker } = await ymaps3.import(
@@ -60,6 +56,20 @@ async function initMap() {
       customization: theme,
     })
   );
+
+  function PopupContent(markerProp) {
+    const textElement = document.createElement("div");
+    textElement.classList.add("text");
+    const darkText = document.createElement("span");
+    darkText.classList.add("dark");
+    darkText.innerText = markerProp.format;
+    const text = document.createElement("span");
+    text.innerText = " format";
+
+    textElement.appendChild(darkText);
+    textElement.appendChild(text);
+    return textElement;
+  }
 
   markers.forEach((markerProp) => {
     const marker = new YMapPopupMarker({

@@ -1,3 +1,4 @@
+console.log("DEV BY TG-@ProKsiKzzz");
 const headerDesctopEl = document.querySelector(".header_desktop");
 const headerBurgrerEl = document.querySelector(".header-mobile__burger");
 const headerMenuEl = document.querySelector(".header-mobile__menu");

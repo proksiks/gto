@@ -1,29 +1,6 @@
 import theme from "./map.theme.js";
 import data from "./map.data.js";
 
-const markers = [
-  {
-    coordinates: [39.9589, 43.4083],
-    format: "GPX",
-    position: "top",
-  },
-  {
-    coordinates: [39.9557, 43.4033],
-    format: "YMapsML",
-    position: "top",
-  },
-  {
-    coordinates: [39.9691, 43.4061],
-    format: "KML",
-    position: "top",
-  },
-  {
-    coordinates: [39.9786, 43.4079],
-    format: "GeoJSON",
-    position: "top",
-  },
-];
-
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
 
@@ -71,7 +48,7 @@ async function initMap() {
     return textElement;
   }
 
-  markers.forEach((markerProp) => {
+  data.forEach((markerProp) => {
     const marker = new YMapPopupMarker({
       coordinates: markerProp.coordinates,
       position: markerProp.position,

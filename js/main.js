@@ -15576,6 +15576,7 @@ headers.forEach(header => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+console.log("DEV BY TG-@ProKsiKzzz");
 const headerDesctopEl = document.querySelector(".header_desktop");
 const headerBurgrerEl = document.querySelector(".header-mobile__burger");
 const headerMenuEl = document.querySelector(".header-mobile__menu");
@@ -15634,23 +15635,10 @@ if (headerMobileLinkEl.length > 0) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-console.log("DEV BY TG-@ProKsiKzzz");
-
-/***/ }),
-
-/***/ "./src/js/components/map.js":
-/*!**********************************!*\
-  !*** ./src/js/components/map.js ***!
-  \**********************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _map_theme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.theme.js */ "./src/js/components/map.theme.js");
-/* harmony import */ var _map_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.data.js */ "./src/js/components/map.data.js");
-
-
-const markers = [{
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   coordinates: [39.9589, 43.4083],
   format: "GPX",
   position: "top"
@@ -15666,7 +15654,22 @@ const markers = [{
   coordinates: [39.9786, 43.4079],
   format: "GeoJSON",
   position: "top"
-}];
+}]);
+
+/***/ }),
+
+/***/ "./src/js/components/map.js":
+/*!**********************************!*\
+  !*** ./src/js/components/map.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _map_theme_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.theme.js */ "./src/js/components/map.theme.js");
+/* harmony import */ var _map_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.data.js */ "./src/js/components/map.data.js");
+
+
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
 async function initMap() {
@@ -15701,7 +15704,7 @@ async function initMap() {
     textElement.appendChild(text);
     return textElement;
   }
-  markers.forEach(markerProp => {
+  _map_data_js__WEBPACK_IMPORTED_MODULE_1__["default"].forEach(markerProp => {
     const marker = new YMapPopupMarker({
       coordinates: markerProp.coordinates,
       position: markerProp.position,

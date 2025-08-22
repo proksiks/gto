@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@splinetool/runtime": "^1.10.48",
     "aos": "^2.3.4",
     "flatpickr": "^4.6.13",
     "graph-modal": "^1.0.7",

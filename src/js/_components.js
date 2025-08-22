@@ -6,3 +6,4 @@ import "./components/tabs.js";
 import "./components/news.js";
 import "./components/map.js";
 import "./components/standards.js";
+import "./components/hero.js";

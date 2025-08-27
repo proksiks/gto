@@ -1,891 +1,643 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  @include('partials/head.html', { "title": "Новости" })
+@include('partials/head.html', { "title": "Новости" })
 
-  <body>
-    <div>
-      @include('partials/header.html')
-      <main class="main">
-        <div class="news-page">
-          <div class="news-page__container container">
-            <div class="news-page__top">
-              <div class="news-page__breadcrumbs breadcrumbs">
-                <ul class="breadcrumbs__list">
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="/">Главная</a>
-                  </li>
-                  <li class="breadcrumbs__item breadcrumbs__item--active">
-                    <span>Новости</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="news-page__head">
-              <h1 class="news-page__title subtitle">Новости</h1>
-              <div class="news-page__slider">
-                <div class="swiper-wrapper">
-                  <div class="news-page__slide swiper-slide">
-                    <div class="news__card">
-                      <img
-                        src="img/pages/main/news/news-cover.jpg"
-                        alt="Картинка"
-                        class="news__card-cover"
-                      />
-
-                      <div class="news__card-head">
-                        <div class="news__card-date">12.01.2025</div>
-                        <div class="news__card-city">Санкт-Петербург</div>
-                      </div>
-                      <div class="news__card-title">
-                        ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                      </div>
-                      <div class="news__card-text">
-                        На Петербургском международном экономическом форуме
-                        состоялось вручение золотых знаков отличия ГТО
-                      </div>
-
-                      <a
-                        href="news-detail.html"
-                        class="news__card-link button button_border"
-                      >
-                        Читать
-                      </a>
-                    </div>
-                  </div>
-                  <div class="news-page__slide swiper-slide">
-                    <div class="news__card">
-                      <img
-                        src="img/pages/main/news/news-cover.jpg"
-                        alt="Картинка"
-                        class="news__card-cover"
-                      />
-
-                      <div class="news__card-head">
-                        <div class="news__card-date">12.01.2025</div>
-                        <div class="news__card-city">Санкт-Петербург</div>
-                      </div>
-                      <div class="news__card-title">
-                        ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                      </div>
-                      <div class="news__card-text">
-                        На Петербургском международном экономическом форуме
-                        состоялось вручение золотых знаков отличия ГТО
-                      </div>
-
-                      <a
-                        href="news-detail.html"
-                        class="news__card-link button button_border"
-                      >
-                        Читать
-                      </a>
-                    </div>
-                  </div>
-                  <div class="news-page__slide swiper-slide">
-                    <div class="news__card">
-                      <img
-                        src="img/pages/main/news/news-cover.jpg"
-                        alt="Картинка"
-                        class="news__card-cover"
-                      />
-
-                      <div class="news__card-head">
-                        <div class="news__card-date">12.01.2025</div>
-                        <div class="news__card-city">Санкт-Петербург</div>
-                      </div>
-                      <div class="news__card-title">
-                        ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                      </div>
-                      <div class="news__card-text">
-                        На Петербургском международном экономическом форуме
-                        состоялось вручение золотых знаков отличия ГТО
-                      </div>
-
-                      <a
-                        href="news-detail.html"
-                        class="news__card-link button button_border"
-                      >
-                        Читать
-                      </a>
-                    </div>
-                  </div>
-                  <div class="news-page__slide swiper-slide">
-                    <div class="news__card">
-                      <img
-                        src="img/pages/main/news/news-cover.jpg"
-                        alt="Картинка"
-                        class="news__card-cover"
-                      />
-
-                      <div class="news__card-head">
-                        <div class="news__card-date">12.01.2025</div>
-                        <div class="news__card-city">Санкт-Петербург</div>
-                      </div>
-                      <div class="news__card-title">
-                        ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                      </div>
-                      <div class="news__card-text">
-                        На Петербургском международном экономическом форуме
-                        состоялось вручение золотых знаков отличия ГТО
-                      </div>
-
-                      <a
-                        href="news-detail.html"
-                        class="news__card-link button button_border"
-                      >
-                        Читать
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="news__slider-pagination swiper-pagination"></div>
-              </div>
+<body>
+  <div>
+    @include('partials/header.html')
+    <main class="main">
+      <div class="news-page">
+        <div class="news-page__container container">
+          <div class="news-page__top">
+            <div class="news-page__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="/">Главная</a>
+                </li>
+                <li class="breadcrumbs__item breadcrumbs__item--active">
+                  <span>Новости</span>
+                </li>
+              </ul>
             </div>
           </div>
+          <div class="news-page__head">
+            <h1 class="news-page__title subtitle">Новости</h1>
+            <div class="news-page__slider">
+              <div class="swiper-wrapper">
+                <div class="news-page__slide swiper-slide">
+                  <div class="news__card">
+                    <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
 
-          <div class="news-page__container container">
-            <div class="news-page__filters">
-              <div class="news-page__selects">
-                <div class="select-menu">
-                  <div class="select-menu__wrapper" id="calendar-wrapper">
-                    <img
-                      class="select-menu__img"
-                      src="img/svg/calendar.svg"
-                      alt="Календарь"
-                    />
+                    <div class="news__card-head">
+                      <div class="news__card-date">12.01.2025</div>
+                      <div class="news__card-city">Санкт-Петербург</div>
+                    </div>
+                    <div class="news__card-title">
+                      ГТО ПМЭФ-2025: чествование героев и чемпионов!
+                    </div>
+                    <div class="news__card-text">
+                      На Петербургском международном экономическом форуме
+                      состоялось вручение золотых знаков отличия ГТО
+                    </div>
 
-                    <input
-                      class="select-menu__input"
-                      type="text"
-                      id="date-input"
-                      placeholder="Выберите дату"
-                      readonly
-                    />
-
-                    <button class="select-menu__clear">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 7L7 17M7 7L17 17"
-                          stroke="#B4B4B4"
-                          stroke-width="2.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-
-                    <svg
-                      class="select-menu__arrow"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M18 10L12 16L6 10"
-                        stroke="#B4B4B4"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                    <a href="news-detail.html" class="news__card-link button button_border">
+                      Подробнее
+                    </a>
                   </div>
                 </div>
-                <div class="custom-select" id="custom-select">
-                  <div class="custom-select__wrapper">
-                    <img
-                      class="custom-select__img"
-                      src="img/svg/location.svg"
-                      alt="Локация"
-                    />
+                <div class="news-page__slide swiper-slide">
+                  <div class="news__card">
+                    <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
 
-                    <select class="custom-select" id="my-select">
-                      <option
-                        class="custom-select__placeholder"
-                        data-placeholder="true"
-                      ></option>
-                      <option value="1">Москва</option>
-                      <option value="2">Московская область</option>
-                      <option value="3">Санкт-Петербург</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                      <option value="4">Ленинградская область</option>
-                    </select>
+                    <div class="news__card-head">
+                      <div class="news__card-date">12.01.2025</div>
+                      <div class="news__card-city">Санкт-Петербург</div>
+                    </div>
+                    <div class="news__card-title">
+                      ГТО ПМЭФ-2025: чествование героев и чемпионов!
+                    </div>
+                    <div class="news__card-text">
+                      На Петербургском международном экономическом форуме
+                      состоялось вручение золотых знаков отличия ГТО
+                    </div>
 
-                    <button class="custom-select__clear">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 7L7 17M7 7L17 17"
-                          stroke="#B4B4B4"
-                          stroke-width="2.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
+                    <a href="news-detail.html" class="news__card-link button button_border">
+                      Подробнее
+                    </a>
+                  </div>
+                </div>
+                <div class="news-page__slide swiper-slide">
+                  <div class="news__card">
+                    <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
 
-                    <svg
-                      class="custom-select__arrow"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M18 10L12 16L6 10"
-                        stroke="#B4B4B4"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                    <div class="news__card-head">
+                      <div class="news__card-date">12.01.2025</div>
+                      <div class="news__card-city">Санкт-Петербург</div>
+                    </div>
+                    <div class="news__card-title">
+                      ГТО ПМЭФ-2025: чествование героев и чемпионов!
+                    </div>
+                    <div class="news__card-text">
+                      На Петербургском международном экономическом форуме
+                      состоялось вручение золотых знаков отличия ГТО
+                    </div>
+
+                    <a href="news-detail.html" class="news__card-link button button_border">
+                      Подробнее
+                    </a>
+                  </div>
+                </div>
+                <div class="news-page__slide swiper-slide">
+                  <div class="news__card">
+                    <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+                    <div class="news__card-head">
+                      <div class="news__card-date">12.01.2025</div>
+                      <div class="news__card-city">Санкт-Петербург</div>
+                    </div>
+                    <div class="news__card-title">
+                      ГТО ПМЭФ-2025: чествование героев и чемпионов!
+                    </div>
+                    <div class="news__card-text">
+                      На Петербургском международном экономическом форуме
+                      состоялось вручение золотых знаков отличия ГТО
+                    </div>
+
+                    <a href="news-detail.html" class="news__card-link button button_border">
+                      Подробнее
+                    </a>
                   </div>
                 </div>
               </div>
-              <button class="news-page__reset">
-                <img src="img/icons/red-cross.svg" alt="Крест" />Сбросить фильтр
-              </button>
+              <div class="news__slider-pagination swiper-pagination"></div>
             </div>
-            <div class="news-page__articles news-page__articles_desctop">
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <!--  -->
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-              <article class="news__article">
-                <div class="news__article-info">
-                  <div class="news__article-date">12.01.2025</div>
-                  <div class="news__article-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__article-cover">
-                  <img src="img/shared/news/cover.jpg" alt="Картинка" />
-                  <div>
-                    <h3 class="news__article-title">
-                      <a href="news-detail.html">
-                        ГТО на ПМЭФ-2025: чествование героев и чемпионов!
-                      </a>
-                    </h3>
-                    <p class="news__article-txt">
-                      На Петербургском международном экономическом форуме
-                      состоялось вручение золотых знаков отличия ГТО
-                    </p>
-                  </div>
-                </div>
-                <div class="news__article-arrow">
-                  <a
-                    class="news__article-link"
-                    href="news-detail.html"
-                    aria-label="Перейти к новости"
-                  >
-                    <img
-                      width="27"
-                      height="27"
-                      src="img/icons/right-arrow.svg"
-                      alt="Иконка"
-                    />
-                  </a>
-                </div>
-              </article>
-            </div>
-            <div class="news-page__articles news-page__articles_mobile">
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-              <div class="news__card">
-                <img
-                  src="img/pages/main/news/news-cover.jpg"
-                  alt="Картинка"
-                  class="news__card-cover"
-                />
-
-                <div class="news__card-head">
-                  <div class="news__card-date">12.01.2025</div>
-                  <div class="news__card-city">Санкт-Петербург</div>
-                </div>
-                <div class="news__card-title">
-                  ГТО ПМЭФ-2025: чествование героев и чемпионов!
-                </div>
-                <div class="news__card-text">
-                  На Петербургском международном экономическом форуме состоялось
-                  вручение золотых знаков отличия ГТО
-                </div>
-
-                <a
-                  href="news-detail.html"
-                  class="news__card-link button button_border"
-                >
-                  Подробнее
-                </a>
-              </div>
-            </div>
-            <button class="news-page__more button button_red">
-              Показать еще
-            </button>
-            @include('partials/components/pagination.html')
           </div>
         </div>
-      </main>
-      @include('partials/footer.html')
-    </div>
-  </body>
+
+        <div class="news-page__container container">
+          <div class="news-page__filters">
+            <div class="news-page__selects">
+              <div class="select-menu">
+                <div class="select-menu__wrapper" id="calendar-wrapper">
+                  <img class="select-menu__img" src="img/svg/calendar.svg" alt="Календарь" />
+
+                  <input class="select-menu__input" type="text" id="date-input" placeholder="Выберите дату" readonly />
+
+                  <button class="select-menu__clear">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+
+                  <svg class="select-menu__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 10L12 16L6 10" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              <div class="custom-select" id="custom-select">
+                <div class="custom-select__wrapper">
+                  <img class="custom-select__img" src="img/svg/location.svg" alt="Локация" />
+
+                  <select class="custom-select" id="my-select">
+                    <option class="custom-select__placeholder" data-placeholder="true"></option>
+                    <option value="1">Москва</option>
+                    <option value="2">Московская область</option>
+                    <option value="3">Санкт-Петербург</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                    <option value="4">Ленинградская область</option>
+                  </select>
+
+                  <button class="custom-select__clear">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+
+                  <svg class="custom-select__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 10L12 16L6 10" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <button class="news-page__reset">
+              <img src="img/icons/red-cross.svg" alt="Крест" />Сбросить фильтр
+            </button>
+          </div>
+          <div class="news-page__articles news-page__articles_desctop">
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <!--  -->
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+            <article class="news__article">
+              <div class="news__article-info">
+                <div class="news__article-date">12.01.2025</div>
+                <div class="news__article-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__article-cover">
+                <img src="img/shared/news/cover.jpg" alt="Картинка" />
+                <div>
+                  <h3 class="news__article-title">
+                    <a href="news-detail.html">
+                      ГТО на ПМЭФ-2025: чествование героев и чемпионов!
+                    </a>
+                  </h3>
+                  <p class="news__article-txt">
+                    На Петербургском международном экономическом форуме
+                    состоялось вручение золотых знаков отличия ГТО
+                  </p>
+                </div>
+              </div>
+              <div class="news__article-arrow">
+                <a class="news__article-link" href="news-detail.html" aria-label="Перейти к новости">
+                  <img width="27" height="27" src="img/icons/right-arrow.svg" alt="Иконка" />
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="news-page__articles news-page__articles_mobile">
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+            <div class="news__card">
+              <img src="img/pages/main/news/news-cover.jpg" alt="Картинка" class="news__card-cover" />
+
+              <div class="news__card-head">
+                <div class="news__card-date">12.01.2025</div>
+                <div class="news__card-city">Санкт-Петербург</div>
+              </div>
+              <div class="news__card-title">
+                ГТО ПМЭФ-2025: чествование героев и чемпионов!
+              </div>
+              <div class="news__card-text">
+                На Петербургском международном экономическом форуме состоялось
+                вручение золотых знаков отличия ГТО
+              </div>
+
+              <a href="news-detail.html" class="news__card-link button button_border">
+                Подробнее
+              </a>
+            </div>
+          </div>
+          <button class="news-page__more button button_red">
+            Показать еще
+          </button>
+          @include('partials/components/pagination.html')
+        </div>
+      </div>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
 </html>

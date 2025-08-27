@@ -20,13 +20,20 @@
     }
   }
 
+  &__remove-img {
+    path {
+      transition: all 0.3s;
+    }
+  }
+
   &__remove {
     font-family: var(--font-pt);
     font-weight: 700;
-    color: var(--color-red);
+    color: var(--silver-color);
     display: flex;
     align-items: center;
     column-gap: 8px;
+    transition: all 0.3s;
 
     @media screen and (width <=768px) {
       align-self: flex-end;
@@ -35,6 +42,12 @@
 
     &:hover {
       color: #c02c36;
+
+      .filter__remove-img {
+        path {
+          stroke: #c02c36;
+        }
+      }
     }
   }
 }

@@ -2,11 +2,11 @@
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 204px 197px 204px 197px;
+  grid-auto-rows: minmax(100px, auto);
+  /* Автоматические строки вместо фиксированных */
 
   @media screen and (width <=1230px) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
   }
 
   @media screen and (width <=1024px) {
@@ -18,11 +18,16 @@
     gap: 4px;
   }
 
+  @media screen and (width <=480px) {
+    grid-template-columns: 1fr;
+  }
+
   &__item {
     width: 100%;
     height: 100%;
     object-fit: cover;
 
+    /* Позиционирование только для первых 22 элементов */
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -111,47 +116,27 @@
       grid-area: 4 / 7 / 5 / 9;
     }
 
+    /* Для элементов после 22-го - автоматическое размещение */
+    &:nth-child(n+23) {
+      grid-area: auto;
+    }
+
     @media screen and (width <=1230px) {
 
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4),
-      &:nth-child(5),
-      &:nth-child(6),
-      &:nth-child(7),
-      &:nth-child(8),
-      &:nth-child(9),
-      &:nth-child(10),
-      &:nth-child(11),
-      &:nth-child(12),
-      &:nth-child(13),
-      &:nth-child(14),
-      &:nth-child(15),
-      &:nth-child(16),
-      &:nth-child(17),
-      &:nth-child(18),
-      &:nth-child(19),
-      &:nth-child(20),
-      &:nth-child(21),
-      &:nth-child(22) {
+      /* На всех разрешениях ниже 1230px - автоматическое размещение */
+      &,
+      &:nth-child(-n+22),
+      &:nth-child(n+23) {
         grid-area: auto;
       }
-
     }
   }
-
-
-
-  // &__item {
-  //   @media screen and (width <=1230px) {
-  //     grid-area: auto;
-  //   }
-  // }
 
   &__img {
     height: 100%;
     width: 100%;
     border-radius: 8px;
+    object-fit: cover;
+    /* Добавляем object-fit для изображений */
   }
 }

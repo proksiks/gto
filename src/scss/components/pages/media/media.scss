@@ -112,13 +112,28 @@
     }
   }
 
+  &__info-date-desk {
+    display: block;
+
+    @media screen and (width <=768px) {
+      display: none;
+    }
+  }
+
+  &__info-date-mobile {
+    display: none;
+
+    @media screen and (width <=768px) {
+      display: block;
+    }
+  }
+
   &__info-left {
     display: flex;
     align-items: center;
     gap: 2.5rem;
 
     @media screen and (width <=768px) {
-      flex-direction: row-reverse;
       justify-content: space-between;
       width: 100%;
     }

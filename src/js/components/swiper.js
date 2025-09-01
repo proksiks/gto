@@ -31,7 +31,7 @@ new Swiper("#partnersBottom", {
   speed: 12000,
 });
 new Swiper(".news__slider", {
-  slidesPerView: 1.25,
+  slidesPerView: 1.1,
   spaceBetween: 16,
   pagination: {
     el: ".swiper-pagination",
@@ -53,7 +53,7 @@ new Swiper(".about-disciplines__slider", {
 });
 
 new Swiper(".news-page__slider", {
-  slidesPerView: 'auto',
+  slidesPerView: "auto",
   spaceBetween: 8,
   pagination: {
     el: ".swiper-pagination",

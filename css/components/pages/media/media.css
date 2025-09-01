@@ -129,6 +129,22 @@
     gap: 0.5rem;
   }
 }
+.media__info-date-desk {
+  display: block;
+}
+@media screen and (width <= 768px) {
+  .media__info-date-desk {
+    display: none;
+  }
+}
+.media__info-date-mobile {
+  display: none;
+}
+@media screen and (width <= 768px) {
+  .media__info-date-mobile {
+    display: block;
+  }
+}
 .media__info-left {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,10 +156,6 @@
 }
 @media screen and (width <= 768px) {
   .media__info-left {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;

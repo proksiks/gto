@@ -15530,7 +15530,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/tabs.js */ "./src/js/components/tabs.js");
 /* harmony import */ var _components_news_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/news.js */ "./src/js/components/news.js");
 /* harmony import */ var _components_map_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/map.js */ "./src/js/components/map.js");
-/* harmony import */ var _components_hero_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/hero.js */ "./src/js/components/hero.js");
+/* harmony import */ var _components_popup_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/popup.js */ "./src/js/components/popup.js");
+/* harmony import */ var _components_hero_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/hero.js */ "./src/js/components/hero.js");
+
 
 
 
@@ -15566,6 +15568,36 @@ headers.forEach(header => {
     }
   });
 });
+const dropdownLk = document.getElementById('dropdown-lk');
+if (dropdownLk) {
+  const toggle = dropdownLk.querySelector('.dropdown-lk-toggle');
+  const items = dropdownLk.querySelectorAll('.dropdown-lk-item');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      dropdownLk.classList.toggle('open');
+    });
+  }
+  if (items && items.length > 0) {
+    items.forEach(item => {
+      item.addEventListener('click', e => {
+        // Если это "фейковая" ссылка (#), отменяем переход
+        if (item.getAttribute('href') === '#') {
+          e.preventDefault();
+        }
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        dropdownLk.classList.remove('open');
+      });
+    });
+  }
+
+  // Закрытие при клике вне
+  document.addEventListener('click', e => {
+    if (!dropdownLk.contains(e.target)) {
+      dropdownLk.classList.remove('open');
+    }
+  });
+}
 
 /***/ }),
 
@@ -21743,6 +21775,60 @@ if (videoButton) {
     activeTab.classList.add("news-detail__gallery-items_hide");
     hideTab.classList.remove("news-detail__gallery-items_hide");
     hideTab.classList.add("news-detail__gallery-items_active");
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/components/popup.js":
+/*!************************************!*\
+  !*** ./src/js/components/popup.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const popupPrikaz = document.getElementById("popupPrikaz");
+const popupPrikazClose = document.getElementById("popupPrikazClose");
+
+// Блоки для десктопа и мобилки
+const orderBlock = document.getElementById("orderBlock");
+const orderBlockMob = document.getElementById("orderBlockMob");
+
+// Функция открытия попапа на десктопе
+function openPopup() {
+  popupPrikaz.style.display = "block";
+}
+
+// Закрытие попапа
+popupPrikazClose.addEventListener("click", () => {
+  popupPrikaz.style.display = "none";
+});
+
+// Закрытие по клику вне контента
+window.addEventListener("click", e => {
+  if (e.target === popupPrikaz) {
+    popupPrikaz.style.display = "none";
+  }
+});
+
+// Десктопный блок
+if (orderBlock) {
+  orderBlock.addEventListener("click", () => {
+    openPopup();
+  });
+}
+
+// Мобильный блок
+if (orderBlockMob) {
+  orderBlockMob.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      // На мобилке сразу открываем PDF в новой вкладке
+      window.open("files-docs/order.pdf", "_blank");
+    } else {
+      // На десктопе открываем попап
+      openPopup();
+    }
   });
 }
 

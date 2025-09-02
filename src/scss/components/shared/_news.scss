@@ -52,6 +52,11 @@
     .news__article-arrow {
       transform: translateX(-1.5rem);
     }
+
+    .news__article-title,
+    .news__article-txt {
+      color: var(--color-red);
+    }
   }
 }
 
@@ -111,10 +116,6 @@
   a {
     color: inherit;
     transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: var(--color-red);
-    }
   }
 }
 
@@ -129,6 +130,7 @@
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
+  transition: color 0.3s ease-in-out;
 }
 
 .news__article-arrow {
@@ -138,12 +140,6 @@
 
 .news__article-link {
   width: 3.125rem;
-
-  &:hover {
-    img {
-      transform: translateX(0.625rem) scale(1.15);
-    }
-  }
 
   img {
     transition: transform 0.3s ease-in-out;

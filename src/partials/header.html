@@ -23,12 +23,16 @@
         <img src="img/shared/header/emblem.svg" alt="Герб РФ" />
         <img src="img/shared/header/fds.png" alt="Логотип ФДС" />
       </a>
-      <a class="header__profile button button_red"
-        href="https://auth.gto.gov.ru/auth/realms/MinsportAuthGto/protocol/openid-connect/auth?client_id=MinsportAuthGto-Proxy&state=29b5db7bf616d134dcebec96bede57a2&nonce=529c215c2f28535ea28f2502e4504191&redirect_uri=https%3A%2F%2Fgto.gov.ru%2Fopenid-connect-auth%2Fredirect_uri&scope=openid&response_type=code"
-        target="_blank">
-        Личный кабинет @include('components/sprite.html', {
-        class:"header__menu-icon", width: 32, height: 32, name: "arrow-up" })
-      </a>
+      <div class="dropdown-lk" id="dropdown-lk">
+        <button class="header__profile button button_red dropdown-lk-toggle">
+          Личный кабинет @include('components/sprite.html', {
+          class:"header__menu-icon", width: 32, height: 32, name: "arrow-up" })
+        </button>
+        <div class="dropdown-lk-menu">
+          <a class="dropdown-lk-item" target="_blank" href="https://auth.gto.gov.ru/auth/realms/MinsportAuthGto/protocol/openid-connect/auth?client_id=MinsportAuthGto-Proxy&state=29b5db7bf616d134dcebec96bede57a2&nonce=529c215c2f28535ea28f2502e4504191&redirect_uri=https%3A%2F%2Fgto.gov.ru%2Fopenid-connect-auth%2Fredirect_uri&scope=openid&response_type=code">ДЛЯ УЧАСТНИКА ГТО</a>
+          <a class="dropdown-lk-item" href="#">ДЛЯ СОТРУДНИКА</a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="header__container container">

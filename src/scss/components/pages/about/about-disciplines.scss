@@ -154,6 +154,30 @@
     transform: scale(1.05);
     .about-disciplines__subtitle {
       color: var(--color-red);
+      transition: 0s;
+    }
+    svg{
+      path{
+        // transition: .4s ease-in-out;
+        fill: #E54954;
+        stroke: #E54954;
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+  .swiper-slide-active{
+    transition: .3s;
+    .about-disciplines__card{
+      svg{
+        path{
+          fill: #E54954;
+          stroke: #E54954;
+        }
+      }
+    }
+    .about-disciplines__subtitle{
+      color: var(--color-red)
     }
   }
 }

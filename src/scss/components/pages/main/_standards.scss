@@ -118,3 +118,33 @@
     display: block;
   }
 }
+.standards__item-wrapper{
+  position: relative;
+}
+.standards__button{
+  position: absolute;
+  bottom: -100%;
+  left: 24px;
+  z-index: 2;
+  transition: opacity .3s;
+  opacity: 0;
+  visibility: hidden;
+  padding: 16px 32px;
+}
+.standards__button:hover{
+  background: #e54954;
+}
+.button_border_white{
+  border-color: #fff;
+  color: #fff;
+}
+.standards__item-wrapper:hover > .standards__button{
+  bottom: 24px;
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 768px) {
+  .standards__button{
+    display: none;
+  }
+}

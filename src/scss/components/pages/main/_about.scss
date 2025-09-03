@@ -82,12 +82,6 @@
       min-height: 10.1875rem;
     }
   }
-
-  &:hover {
-    .main-about__image {
-      transform: translateY(-1.25rem) scale(1.1);
-    }
-  }
 }
 .main-about__image {
   position: relative;
@@ -95,5 +89,21 @@
   transition: transform 0.3s ease-in-out;
   @media (max-width: 480px) {
     margin-top: -2rem;
+  }
+}
+
+.main-about__item {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main-about__item.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@media (max-width: 768px) {
+  .main-about__item::before{
+    border-radius: 12px 12px 0 0;
   }
 }

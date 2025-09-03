@@ -42,20 +42,16 @@
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: white;
-    border-radius: 1rem;
-
-    .news__article-info {
-      transform: translateX(1.5rem);
-    }
-
-    .news__article-arrow {
-      transform: translateX(-1.5rem);
-    }
-
     .news__article-title,
-    .news__article-txt {
+    .news__article-txt,
+    .news__article-date,
+    .news__article-city{
       color: var(--color-red);
+    }
+    svg{
+      path{
+        stroke: #cd313c;
+      }
     }
   }
 }
@@ -140,7 +136,10 @@
 
 .news__article-link {
   width: 3.125rem;
-
+  svg{
+    width: 33px;
+    height: 36px;
+  }
   img {
     transition: transform 0.3s ease-in-out;
   }

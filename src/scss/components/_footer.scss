@@ -125,12 +125,11 @@
 }
 
 .footer__back-to-top {
+  position: fixed;
+  left: -1000%;
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 7%;
-  top: 1.5rem;
-  position: absolute;
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
@@ -154,4 +153,10 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+.footer__back-to-top-fixed{
+  left: 7%;
+  bottom: 1.5rem;
+  z-index: 999;
+  transition: .3s;
 }

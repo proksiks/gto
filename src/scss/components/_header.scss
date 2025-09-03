@@ -177,8 +177,8 @@
   &:hover {
     color: var(--color-red);
     &::before {
-      opacity: 1;
-      transform: translateY(0);
+      // opacity: 1;
+      // transform: translateY(0);
     }
     .header__menu-link_dublicate {
       transform: translateY(0);

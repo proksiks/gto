@@ -1,13 +1,15 @@
 import theme from "./map.theme.js";
 import data from "./map.data.js";
+import data2 from "./map.data2.json";
 
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
+const mapEl2 = document.getElementById("map2");
 
-async function initMap() {
+async function initMap(mapEl, data) {
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
+  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapFeature } =
     ymaps3;
 
   ymaps3.import.registerCdn("https://cdn.jsdelivr.net/npm/{package}", [
@@ -33,6 +35,47 @@ async function initMap() {
     },
     [new YMapDefaultSchemeLayer({}), new YMapDefaultFeaturesLayer({})]
   );
+  /*
+  const regionName = "Самарская область",
+    center = [38.943216, 45.033266],
+    zoom = 11;
+
+  var url = "http://nominatim.openstreetmap.org/search";
+
+  const params = new URLSearchParams({
+    q: regionName,
+    format: "json",
+    polygon_geojson: 1
+  });
+
+  fetch(`${url}?${params.toString()}`, {
+    headers: {
+      "Accept": "application/json"
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Ошибка сети: " + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data)
+
+      data.forEach(item => {
+        const lineStringFeature = new YMapFeature({
+          id: 'administrative',
+          geometry: item.geojson,
+          style: {
+            stroke: [{width: 2, color: 'rgb(14, 194, 219)'}]
+          }
+        });
+        map.addChild(lineStringFeature);
+      })
+
+    })
+    .catch(err => console.error(err));
+  */
 
   map.addChild(
     new YMapDefaultSchemeLayer({
@@ -140,6 +183,7 @@ async function initMap() {
     const popupMarker = new YMapPopupMarker({
       coordinates: markerProp.coordinates,
       position: markerProp.position,
+      offset: 10,
       show: false,
       content: () => contentEl,
     });
@@ -147,10 +191,13 @@ async function initMap() {
 
     let isShown = false;
 
-    const markerElement = document.createElement("span");
+    const markerElement = document.createElement("div");
     markerElement.className = "icon-marker";
+    markerElement.style.transform = 'translate(-50%, -50%)';
     markerElement.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12q.825 0 1.413-.587T14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12m0 10q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22"/></svg>';
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '<rect x="2" y="2" width="20" height="20" rx="10" fill="white" stroke="#CD313C" stroke-width="4"/>\n' +
+      '</svg>\n';
 
     const marker = new YMapMarker(
       {
@@ -179,20 +226,78 @@ async function initMap() {
       isShown = v;
     };
 
-    markerElement.addEventListener("click", (e) => {
+    let hideTimeout;
+
+    markerElement.addEventListener("mouseenter", (e) => {
       e.stopPropagation();
-      setPopupVisibility(!isShown);
+      markerElement.classList.add("show");
+
+      clearTimeout(hideTimeout);
+
+      setPopupVisibility(true);
     });
 
-    contentEl.addEventListener("click", (e) => {
+    markerElement.addEventListener("mouseleave", (e) => {
+      if (isShown) {
+        hideTimeout = setTimeout(() => {
+          contentEl.classList.remove('show')
+          setPopupVisibility(false);
+          clearTimeout(hideTimeout);
+        }, 500);
+      }
+    });
+
+    try {
+      contentEl.closest('.ymaps3--popup-marker_container').addEventListener("mouseenter", (e) => {
+        clearTimeout(hideTimeout);
+      });
+
+      contentEl.closest('.ymaps3--popup-marker_container').nextSibling.addEventListener("mouseenter", (e) => {
+        clearTimeout(hideTimeout);
+      });
+    }
+    catch (e) {
+      console.log(e);
+    }
+
+    contentEl.closest('.ymaps3--popup-marker_container').addEventListener("mouseleave", (e) => {
       e.stopPropagation();
-      if (isShown) setPopupVisibility(false);
+      if (isShown) {
+        hideTimeout = setTimeout(() => {
+          contentEl.classList.remove('show')
+          setPopupVisibility(false);
+          clearTimeout(hideTimeout);
+        }, 300);
+      }
     });
   }
 }
 
 if (mapEl) {
-  initMap();
+  const dataPrepared = data.map(item => {
+    return {
+      ...item,
+      coordinates: [item.coordinates[1], item.coordinates[0]]
+    }
+  })
+  initMap(mapEl, dataPrepared);
+}
+
+if (mapEl2) {
+  const data = data2.map(item => {
+    return {
+      coordinates: item.coordinates,
+      format: {
+        subject: item.region,
+        adress: item.adress,
+        phone: item.phone.toString(),
+        mail: item.mail,
+      },
+      position: "top",
+    }
+  })
+
+  initMap(mapEl2, data);
 }
 
 if (layerEl) {

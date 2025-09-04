@@ -32,6 +32,18 @@
       width: 2.5rem;
     }
   }
+  &__doc{
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.about-disciplines__doc.white{
+  color: #fff;
+  border-color: #fff;
 }
 .about-disciplines__header {
   display: flex;
@@ -139,6 +151,35 @@
 }
 .about-disciplines__slide {
   max-width: 19.375rem;
+  &:hover {
+    .about-disciplines__card{
+      background-color: #cd313c;
+    }
+    .about-disciplines__subtitle {
+      color: var(--color-red);
+      transition: 0s;
+    }
+    svg{
+      path{
+        // transition: .4s ease-in-out;
+        fill: #e54954;
+        stroke: #e54954;
+      }
+      rect{
+        fill: transparent;
+      }
+    }
+    .about-disciplines__subtitle{
+      color: #fff;
+    }
+    .about-disciplines__icon{
+      svg{
+        path{
+          fill: #fff;
+        }
+      }
+    }
+  }
 }
 .about-disciplines__card {
   display: block;
@@ -149,19 +190,13 @@
   background-color: var(--light-color);
   border-radius: 1rem;
   transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-    .about-disciplines__subtitle {
-      color: var(--color-red);
-      transition: 0s;
-    }
-    svg{
-      path{
-        // transition: .4s ease-in-out;
-        fill: #E54954;
-        stroke: #E54954;
-      }
+}
+.about-disciplines__slide{
+  &:hover{
+    .about-disciplines__doc{
+      opacity: 1;
+      visibility: visible;
+      transition: .3s;
     }
   }
 }
@@ -169,15 +204,35 @@
   .swiper-slide-active{
     transition: .3s;
     .about-disciplines__card{
-      svg{
-        path{
-          fill: #E54954;
-          stroke: #E54954;
-        }
+      background-color: #cd313c;
+    }
+    .about-disciplines__subtitle {
+      color: var(--color-red);
+      transition: 0s;
+    }
+    svg{
+      path{
+        // transition: .4s ease-in-out;
+        fill: #e54954;
+        stroke: #e54954;
+      }
+      rect{
+        fill: transparent;
       }
     }
     .about-disciplines__subtitle{
-      color: var(--color-red)
+      color: #fff;
+    }
+    .about-disciplines__icon{
+      svg{
+        path{
+          fill: #fff;
+        }
+      }
+    }
+    .about-disciplines__doc{
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
@@ -210,7 +265,7 @@
   }
 
   &:hover {
-    transform: scale(1.2);
+    // transform: scale(1.2);
   }
 }
 .about-disciplines__cover {

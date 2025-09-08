@@ -86,21 +86,28 @@
   display: inline-block;
 }
 .dropdown-lk-menu {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease;
   position: absolute;
   top: 100%;
   left: 0;
   background: #e54954;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  margin-top: 0;
-  overflow: hidden;
   min-width: 180px;
   width: 100%;
   z-index: 9999;
 }
 .dropdown-lk.open .dropdown-lk-menu {
-  display: block;
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
 }
 .dropdown-lk-item {
   display: block;

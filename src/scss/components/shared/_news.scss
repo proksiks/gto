@@ -41,18 +41,18 @@
 .news__item {
   padding: 1.5rem 0 2.5rem 0;
   border-top: 1px solid rgba(180, 180, 180, 0.2);
-  transition: background-color 0.3s ease-in-out;
-
   &:hover {
     .news__article-title,
     .news__article-txt,
     .news__article-date,
     .news__article-city{
       color: var(--color-red);
+      transition: .3s ease-in-out;
     }
     svg{
       path{
         stroke: #cd313c;
+        transition: .3s ease-in-out;
       }
     }
   }
@@ -113,7 +113,6 @@
 
   a {
     color: inherit;
-    transition: color 0.3s ease-in-out;
   }
 }
 
@@ -128,7 +127,6 @@
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  transition: color 0.3s ease-in-out;
 }
 
 .news__article-arrow {
@@ -138,6 +136,7 @@
 
 .news__article-link {
   width: 3.125rem;
+  transition: transform 0.3s ease-in-out;
   svg{
     width: 33px;
     height: 36px;

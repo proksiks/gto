@@ -2,7 +2,7 @@
   font-size: 1rem;
   font-family: var(--font-pt);
 
-  @media screen and (width <= 991px) {
+  @media screen and (width <=991px) {
     font-size: 0.875rem;
   }
 
@@ -23,7 +23,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: var(--color-red);
+      color: var(--color-gold);
     }
 
     &:not(:last-child) {

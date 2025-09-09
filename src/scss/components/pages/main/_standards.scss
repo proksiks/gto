@@ -70,18 +70,33 @@
   &_red {
     position: relative;
     background-color: var(--color-red);
+    &::before{
+      background-image: url("../img/shared/Frame 519.png");
+      opacity: 1;
+    }
   }
 
   // .standards__item_blue
   &_blue {
     position: relative;
     background-color: var(--color-blue);
+    &::before{
+      background-image: url("../img/shared/Frame 517.png");
+      opacity: 1;
+    }
   }
 
   // .standards__item_green
   &_green {
     position: relative;
     background-color: var(--color-green);
+    &::before{
+      background-image: url("../img/shared/Frame 521.png");
+      opacity: 1;
+    }
+  }
+  &-title{
+    z-index: 2;
   }
 }
 .standards__item-title {

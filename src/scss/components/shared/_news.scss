@@ -167,6 +167,27 @@
       border-radius: 2.5rem;
     }
   }
+  @media (max-width: 768px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    .news__card-text{
+      margin-bottom: 16px;
+    }
+    .news__card-link{
+      padding: 16px 24px;
+      width: fit-content;
+      font-size: 18px;
+      line-height: 100%;
+      height: auto;
+      margin-top: auto;
+    }
+    .swiper-slide{
+      height: auto;
+    }
+    .news__card{
+      height: 100%;
+    }
+  }
 }
 
 .news__card-cover {

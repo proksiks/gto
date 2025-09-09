@@ -84,23 +84,31 @@
 .dropdown-lk {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 .dropdown-lk-menu {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease;
   position: absolute;
   top: 100%;
   left: 0;
   background: #e54954;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  margin-top: 0;
-  overflow: hidden;
   min-width: 180px;
   width: 100%;
   z-index: 9999;
 }
 .dropdown-lk.open .dropdown-lk-menu {
-  display: block;
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
 }
 .dropdown-lk-item {
   display: block;
@@ -352,4 +360,48 @@
 }
 .header-mobile__footer-switch-icon {
   display: block;
+}
+
+.login-panel {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background: #cd313c;
+  color: #fff;
+  padding: 20px;
+  transition: top 0.4s ease, opacity 0.4s ease;
+  z-index: 4; /* выше оверлея */
+  opacity: 0;
+}
+.login-panel.active {
+  top: 63px;
+  opacity: 1;
+}
+
+.login-panel a {
+  font-weight: 700;
+  font-size: 48px;
+  display: inline-block;
+}
+.login-panel a:first-child {
+  margin-bottom: 24px;
+}
+
+/* Оверлей */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+.login-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }

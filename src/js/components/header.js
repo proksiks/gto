@@ -59,3 +59,32 @@ if (headerMobileLinkEl.length > 0) {
     });
   });
 }
+
+const loginBtn = document.getElementById('loginBtn');
+const loginPanel = document.getElementById('loginPanel');
+const overlay = document.getElementById('login-overlay');
+
+if (loginBtn && loginPanel && overlay) {
+  loginBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    loginPanel.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  // Закрытие при клике на оверлей
+  overlay.addEventListener('click', function() {
+    loginPanel.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // Закрытие при клике вне панели и кнопки
+  document.addEventListener('click', function(e) {
+    const isClickInsidePanel = loginPanel.contains(e.target);
+    const isClickOnBtn = loginBtn.contains(e.target);
+
+    if (!isClickInsidePanel && !isClickOnBtn) {
+      loginPanel.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+  });
+}

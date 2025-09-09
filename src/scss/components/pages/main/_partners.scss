@@ -5,6 +5,23 @@
   @media (max-width: 480px) {
     margin-top: 5rem;
   }
+  &__button--mobile{
+    display: none;
+  }
+  @media(max-width: 768px){
+    &__button--mobile{
+      display: block;
+      margin: 0 16px;
+      margin-top: 24px;
+      a{
+        width: 100%;
+        text-align: center;
+      }
+    }
+    &__button--desctop{
+      display: none;
+    }
+  }
 }
 .main-partners__head {
   display: flex;

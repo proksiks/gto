@@ -373,6 +373,10 @@
   @media (max-width: 1280px) {
     display: block;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .about-history__minister-photo {
   flex-shrink: 0;

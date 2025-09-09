@@ -16666,6 +16666,7 @@ __webpack_require__.r(__webpack_exports__);
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
 const mapEl2 = document.getElementById("map2");
+const mapEl3 = document.getElementById("map3");
 async function initMap(mapEl, data) {
   await ymaps3.ready;
   const {
@@ -16689,17 +16690,54 @@ async function initMap(mapEl, data) {
       zoom: 10
     }
   }, [new YMapDefaultSchemeLayer({}), new YMapDefaultFeaturesLayer({})]);
-  /*
-  const regionName = "Самарская область",
+  const addCluster = () => {
+    const marker = setPopupMarker;
+    const points = data.map((item, i) => ({
+      type: 'Feature',
+      id: i,
+      geometry: {
+        coordinates: item.coordinates
+      },
+      ...item
+    }));
+    const cluster = (coordinates, features) => new YMapMarker({
+      coordinates: coordinates
+    }, circle(features.length).cloneNode(true));
+    function circle(count) {
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      circle.innerHTML = `
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="10" fill="white" stroke="#CD313C" stroke-width="4"/>
+            <path d="M7 3.33975C9.29684 2.01366 12.0264 1.65431 14.5882 2.34074C17.15 3.02717 19.3342 4.70316 20.6603 7C21.9863 9.29684 22.3457 12.0264 21.6593 14.5882C20.9728 17.15 19.2968 19.3342 17 20.6603" stroke="#0073B4" stroke-width="4"/>
+          </svg>
+          <span style="position: absolute; display: inline-flex; top: 50%; left: 50%; margin-top:-13px; margin-left:-12px; width: 24px; height: 24px; align-items: center; justify-content: center; font-size: 14px;">${count}</span>
+        <span>
+    `;
+      return circle;
+    }
+    const clusterer = new YMapClusterer({
+      method: clusterByGrid({
+        gridSize: 64
+      }),
+      features: points,
+      marker,
+      cluster
+    });
+    map.addChild(clusterer);
+  };
+
+  /*const regionName = "Самарская область",
     center = [38.943216, 45.033266],
     zoom = 11;
-    var url = "http://nominatim.openstreetmap.org/search";
-    const params = new URLSearchParams({
+   var url = "http://nominatim.openstreetmap.org/search";
+   const params = new URLSearchParams({
     q: regionName,
     format: "json",
     polygon_geojson: 1
   });
-    fetch(`${url}?${params.toString()}`, {
+   fetch(`${url}?${params.toString()}`, {
     headers: {
       "Accept": "application/json"
     }
@@ -16712,7 +16750,7 @@ async function initMap(mapEl, data) {
     })
     .then(data => {
       console.log(data)
-        data.forEach(item => {
+       data.forEach(item => {
         const lineStringFeature = new YMapFeature({
           id: 'administrative',
           geometry: item.geojson,
@@ -16722,10 +16760,9 @@ async function initMap(mapEl, data) {
         });
         map.addChild(lineStringFeature);
       })
-      })
+     })
     .catch(err => console.error(err));
   */
-
   map.addChild(new YMapDefaultSchemeLayer({
     customization: _map_theme_js__WEBPACK_IMPORTED_MODULE_0__["default"]
   }));
@@ -16802,9 +16839,12 @@ async function initMap(mapEl, data) {
     map.addChild(marker);
   });*/
 
-  data.forEach(markerProp => {
-    setPopupMarker(markerProp);
-  });
+  addCluster();
+
+  /*data.forEach((markerProp) => {
+    //setPopupMarker(markerProp);
+  });*/
+
   let openedPopup = null;
   function setPopupMarker(markerProp) {
     const contentEl = PopupContent(markerProp);
@@ -16825,7 +16865,8 @@ async function initMap(mapEl, data) {
       coordinates: markerProp.coordinates,
       anchor: [0.5, 1]
     }, markerElement);
-    map.addChild(marker);
+    //map.addChild(marker);
+
     function setPopupVisibility(next) {
       isShown = next;
       popupMarker.update({
@@ -16882,6 +16923,7 @@ async function initMap(mapEl, data) {
         }, 300);
       }
     });
+    return marker;
   }
 }
 if (mapEl) {
@@ -16907,6 +16949,23 @@ if (mapEl2) {
     };
   });
   initMap(mapEl2, data);
+}
+if (mapEl3) {
+  const dataPrepared = _map_data_js__WEBPACK_IMPORTED_MODULE_1__["default"].map(item => ({
+    ...item,
+    coordinates: [item.coordinates[1], item.coordinates[0]]
+  }));
+  const mergedData = dataPrepared.concat(_map_data2_json__WEBPACK_IMPORTED_MODULE_2__.map(item => ({
+    coordinates: item.coordinates,
+    format: {
+      subject: item.region,
+      adress: item.adress,
+      phone: item.phone.toString(),
+      mail: item.mail
+    },
+    position: "top"
+  })));
+  initMap(mapEl3, mergedData);
 }
 if (layerEl) {
   layerEl.addEventListener("click", () => {
@@ -21998,8 +22057,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const dateInput = document.getElementById("date-input");
-const selectArrow = document.querySelector(".select-menu__arrow");
-const clearButton = document.querySelector(".select-menu__clear");
 document.querySelectorAll(".js-calendar").forEach(element => {
   const calendarWrapper = element.closest(".calendar-wrapper");
   if (!calendarWrapper) {
@@ -22043,12 +22100,15 @@ document.querySelectorAll(".js-calendar").forEach(element => {
     clearButton.addEventListener("click", function () {
       calendar.clear();
       calendar.close();
-      dateInput.style.maxWidth = "210px";
+      element.style.maxWidth = "210px";
       clearButton.classList.remove("select-menu__clear--active");
     });
   }
 });
 if (dateInput) {
+  const calendarWrapper = dateInput.closest("#calendar-wrapper");
+  const selectArrow = calendarWrapper.querySelector(".select-menu__arrow");
+  const clearButton = calendarWrapper.querySelector(".select-menu__clear");
   const calendar = (0,flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])(dateInput, {
     positionElement: document.getElementById("calendar-wrapper"),
     locale: "ru",
@@ -22081,14 +22141,14 @@ if (dateInput) {
       }
     }
   });
-}
-if (clearButton) {
-  clearButton.addEventListener("click", function () {
-    calendar.clear();
-    calendar.close();
-    dateInput.style.maxWidth = "210px";
-    clearButton.classList.remove("select-menu__clear--active");
-  });
+  if (clearButton) {
+    clearButton.addEventListener("click", function () {
+      calendar.clear();
+      calendar.close();
+      dateInput.style.maxWidth = "210px";
+      clearButton.classList.remove("select-menu__clear--active");
+    });
+  }
 }
 
 //Кастомный селект

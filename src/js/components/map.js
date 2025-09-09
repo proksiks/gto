@@ -1,10 +1,11 @@
 import theme from "./map.theme.js";
 import data from "./map.data.js";
-import data2 from "./map.data2.json";
+import testingPoints from "./map.data2.json";
 
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
 const mapEl2 = document.getElementById("map2");
+const mapEl3 = document.getElementById("map3");
 
 async function initMap(mapEl, data) {
   await ymaps3.ready;
@@ -35,8 +36,51 @@ async function initMap(mapEl, data) {
     },
     [new YMapDefaultSchemeLayer({}), new YMapDefaultFeaturesLayer({})]
   );
-  /*
-  const regionName = "Самарская область",
+
+  const addCluster = () => {
+
+    const marker = setPopupMarker;
+
+    const points = data.map((item, i) => ({
+      type: 'Feature',
+      id: i,
+      geometry: {coordinates: item.coordinates},
+      ...item
+    }));
+
+    const cluster = (coordinates, features) =>
+      new YMapMarker(
+        {
+          coordinates: coordinates,
+        },
+        circle(features.length).cloneNode(true)
+      );
+
+    function circle(count) {
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      circle.innerHTML = `
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="10" fill="white" stroke="#CD313C" stroke-width="4"/>
+            <path d="M7 3.33975C9.29684 2.01366 12.0264 1.65431 14.5882 2.34074C17.15 3.02717 19.3342 4.70316 20.6603 7C21.9863 9.29684 22.3457 12.0264 21.6593 14.5882C20.9728 17.15 19.2968 19.3342 17 20.6603" stroke="#0073B4" stroke-width="4"/>
+          </svg>
+          <span style="position: absolute; display: inline-flex; top: 50%; left: 50%; margin-top:-13px; margin-left:-12px; width: 24px; height: 24px; align-items: center; justify-content: center; font-size: 14px;">${count}</span>
+        <span>
+    `;
+      return circle;
+    }
+    const clusterer = new YMapClusterer({
+      method: clusterByGrid({gridSize: 64}),
+      features: points,
+      marker,
+      cluster
+    });
+
+    map.addChild(clusterer);
+  }
+
+  /*const regionName = "Самарская область",
     center = [38.943216, 45.033266],
     zoom = 11;
 
@@ -75,8 +119,7 @@ async function initMap(mapEl, data) {
 
     })
     .catch(err => console.error(err));
-  */
-
+*/
   map.addChild(
     new YMapDefaultSchemeLayer({
       customization: theme,
@@ -171,9 +214,11 @@ async function initMap(mapEl, data) {
     map.addChild(marker);
   });*/
 
-  data.forEach((markerProp) => {
-    setPopupMarker(markerProp);
-  });
+  addCluster();
+
+  /*data.forEach((markerProp) => {
+    //setPopupMarker(markerProp);
+  });*/
 
   let openedPopup = null;
 
@@ -206,7 +251,7 @@ async function initMap(mapEl, data) {
       },
       markerElement
     );
-    map.addChild(marker);
+    //map.addChild(marker);
 
     function setPopupVisibility(next) {
       isShown = next;
@@ -270,6 +315,8 @@ async function initMap(mapEl, data) {
         }, 300);
       }
     });
+
+    return marker;
   }
 }
 
@@ -284,7 +331,7 @@ if (mapEl) {
 }
 
 if (mapEl2) {
-  const data = data2.map(item => {
+  const data = testingPoints.map(item => {
     return {
       coordinates: item.coordinates,
       format: {
@@ -298,6 +345,28 @@ if (mapEl2) {
   })
 
   initMap(mapEl2, data);
+}
+
+if (mapEl3) {
+  const dataPrepared = data.map(item => ({
+    ...item,
+    coordinates: [item.coordinates[1], item.coordinates[0]],
+  }))
+
+  const mergedData = dataPrepared.concat(
+    testingPoints.map(item => ({
+      coordinates: item.coordinates,
+      format: {
+        subject: item.region,
+        adress: item.adress,
+        phone: item.phone.toString(),
+        mail: item.mail,
+      },
+      position: "top",
+    }))
+  )
+
+  initMap(mapEl3, mergedData)
 }
 
 if (layerEl) {

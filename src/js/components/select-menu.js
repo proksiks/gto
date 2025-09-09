@@ -2,8 +2,6 @@ import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js";
 
 const dateInput = document.getElementById("date-input");
-const selectArrow = document.querySelector(".select-menu__arrow");
-const clearButton = document.querySelector(".select-menu__clear");
 
 document.querySelectorAll(".js-calendar").forEach((element) => {
   const calendarWrapper = element.closest(".calendar-wrapper");
@@ -55,13 +53,17 @@ document.querySelectorAll(".js-calendar").forEach((element) => {
     clearButton.addEventListener("click", function () {
       calendar.clear();
       calendar.close();
-      dateInput.style.maxWidth = "210px";
+      element.style.maxWidth = "210px";
       clearButton.classList.remove("select-menu__clear--active");
     });
   }
 });
 
 if (dateInput) {
+  const calendarWrapper = dateInput.closest("#calendar-wrapper");
+  const selectArrow = calendarWrapper.querySelector(".select-menu__arrow");
+  const clearButton = calendarWrapper.querySelector(".select-menu__clear");
+
   const calendar = flatpickr(dateInput, {
     positionElement: document.getElementById("calendar-wrapper"),
     locale: "ru",
@@ -97,15 +99,15 @@ if (dateInput) {
       }
     },
   });
-}
 
-if (clearButton) {
-  clearButton.addEventListener("click", function () {
-    calendar.clear();
-    calendar.close();
-    dateInput.style.maxWidth = "210px";
-    clearButton.classList.remove("select-menu__clear--active");
-  });
+  if (clearButton) {
+    clearButton.addEventListener("click", function () {
+      calendar.clear();
+      calendar.close();
+      dateInput.style.maxWidth = "210px";
+      clearButton.classList.remove("select-menu__clear--active");
+    });
+  }
 }
 
 //Кастомный селект

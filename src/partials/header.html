@@ -99,13 +99,17 @@
       </div>
     </a>
 
-    <a class="header-mobile__profile button button_red"
-      href="https://auth.gto.gov.ru/auth/realms/MinsportAuthGto/protocol/openid-connect/auth?client_id=MinsportAuthGto-Proxy&state=29b5db7bf616d134dcebec96bede57a2&nonce=529c215c2f28535ea28f2502e4504191&redirect_uri=https%3A%2F%2Fgto.gov.ru%2Fopenid-connect-auth%2Fredirect_uri&scope=openid&response_type=code"
-      target="_blank" aria-label="Вход в личный кабинет">
+    <div id="loginBtn" class="header-mobile__profile button button_red">
       <img width="18" height="18" src="img/icons/login.svg" alt="Вход" />
-    </a>
+    </div>
   </div>
-
+  <div class="login-panel" id="loginPanel">
+    <div class="login-panel__content">
+      <a href="https://auth.gto.gov.ru/auth/realms/MinsportAuthGto/protocol/openid-connect/auth?client_id=MinsportAuthGto-Proxy&state=29b5db7bf616d134dcebec96bede57a2&nonce=529c215c2f28535ea28f2502e4504191&redirect_uri=https%3A%2F%2Fgto.gov.ru%2Fopenid-connect-auth%2Fredirect_uri&scope=openid&response_type=code">ДЛЯ УЧАСТНИКА ГТО</a>
+      <a href="#">ДЛЯ СОТРУДНИКА</a>
+    </div>
+  </div>
+  <div class="login-overlay" id="login-overlay"></div>
   <div class="header-mobile__menu">
     <ul class="header-mobile__menu-list">
       <li class="header-mobile__menu-item">

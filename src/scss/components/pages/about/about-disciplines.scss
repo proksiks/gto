@@ -17,6 +17,9 @@
       width: 2.5rem;
     }
   }
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
   &::after {
     content: "";
     position: absolute;

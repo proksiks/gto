@@ -11,6 +11,15 @@
   }
 }
 
+.documents-page__title {
+  margin-bottom: 64px;
+}
+@media screen and (width <= 768px) {
+  .documents-page__title {
+    margin-bottom: 24px;
+  }
+}
+
 @media (max-width: 480px) {
   .documents-page__filters {
     margin-top: 1.5rem;

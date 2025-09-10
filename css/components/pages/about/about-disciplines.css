@@ -20,6 +20,11 @@
     width: 2.5rem;
   }
 }
+@media (max-width: 768px) {
+  .about-disciplines {
+    margin-top: 80px;
+  }
+}
 .about-disciplines::after {
   content: "";
   position: absolute;

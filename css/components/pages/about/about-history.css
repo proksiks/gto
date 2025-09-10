@@ -465,6 +465,17 @@
     display: block;
   }
 }
+@media (max-width: 768px) {
+  .about-history__minister {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
 
 .about-history__minister-photo {
   -ms-flex-negative: 0;

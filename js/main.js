@@ -15700,6 +15700,32 @@ if (headerMobileLinkEl.length > 0) {
     });
   });
 }
+const loginBtn = document.getElementById('loginBtn');
+const loginPanel = document.getElementById('loginPanel');
+const overlay = document.getElementById('login-overlay');
+if (loginBtn && loginPanel && overlay) {
+  loginBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    loginPanel.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  // Закрытие при клике на оверлей
+  overlay.addEventListener('click', function () {
+    loginPanel.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // Закрытие при клике вне панели и кнопки
+  document.addEventListener('click', function (e) {
+    const isClickInsidePanel = loginPanel.contains(e.target);
+    const isClickOnBtn = loginBtn.contains(e.target);
+    if (!isClickInsidePanel && !isClickOnBtn) {
+      loginPanel.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+  });
+}
 
 /***/ }),
 
@@ -16731,13 +16757,13 @@ async function initMap(mapEl, data) {
   /*const regionName = "Самарская область",
     center = [38.943216, 45.033266],
     zoom = 11;
-   var url = "http://nominatim.openstreetmap.org/search";
-   const params = new URLSearchParams({
+    var url = "http://nominatim.openstreetmap.org/search";
+    const params = new URLSearchParams({
     q: regionName,
     format: "json",
     polygon_geojson: 1
   });
-   fetch(`${url}?${params.toString()}`, {
+    fetch(`${url}?${params.toString()}`, {
     headers: {
       "Accept": "application/json"
     }
@@ -16750,7 +16776,7 @@ async function initMap(mapEl, data) {
     })
     .then(data => {
       console.log(data)
-       data.forEach(item => {
+        data.forEach(item => {
         const lineStringFeature = new YMapFeature({
           id: 'administrative',
           geometry: item.geojson,
@@ -16760,7 +16786,7 @@ async function initMap(mapEl, data) {
         });
         map.addChild(lineStringFeature);
       })
-     })
+      })
     .catch(err => console.error(err));
   */
   map.addChild(new YMapDefaultSchemeLayer({

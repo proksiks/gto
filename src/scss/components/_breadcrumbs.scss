@@ -21,9 +21,10 @@
     position: relative;
     flex-shrink: 0;
     transition: color 0.3s ease;
-
-    &:hover {
-      color: var(--color-gold);
+    .breadcrumbs__link{
+      &:hover {
+        color: var(--color-gold);
+      }
     }
 
     &:not(:last-child) {

@@ -183,7 +183,7 @@ button {
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
-.breadcrumbs__item:hover {
+.breadcrumbs__item .breadcrumbs__link:hover {
   color: var(--color-gold);
 }
 .breadcrumbs__item:not(:last-child) {
@@ -2730,8 +2730,8 @@ button {
   padding-top: 1rem;
   color: var(--light-color);
 }
-.about-hero__breadcrumbs .breadcrumbs__item:hover {
-  color: var(--color-black);
+.about-hero__breadcrumbs .breadcrumbs__item .breadcrumbs__link:hover {
+  color: var(--color-gold);
 }
 
 .about-hero__content {
@@ -3460,6 +3460,11 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  .about-disciplines__link {
+    display: none;
+  }
+}
 @media (max-width: 480px) {
   .about-disciplines__link {
     width: 100%;
@@ -6039,6 +6044,10 @@ button {
   font-weight: 700;
 }
 
+.date-filter__select {
+  margin-left: auto;
+}
+
 .filter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6174,7 +6183,7 @@ button {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
-  padding: 0 28px 0 28px;
+  padding: 0 38px 0 28px;
   position: relative;
   z-index: 2;
   font-family: var(--font-pt);

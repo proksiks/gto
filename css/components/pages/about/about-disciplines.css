@@ -109,6 +109,11 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about-disciplines__link {
+    display: none;
+  }
+}
 @media (max-width: 480px) {
   .about-disciplines__link {
     width: 100%;

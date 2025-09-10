@@ -24,8 +24,8 @@
   padding-top: 1rem;
   color: var(--light-color);
 }
-.about-hero__breadcrumbs .breadcrumbs__item:hover {
-  color: var(--color-black);
+.about-hero__breadcrumbs .breadcrumbs__item .breadcrumbs__link:hover {
+  color: var(--color-gold);
 }
 
 .about-hero__content {

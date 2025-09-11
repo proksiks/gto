@@ -253,3 +253,14 @@
 
   }
 }
+
+#calendar-wrapper-mobile .select-menu__input{
+  max-width: 100%;
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+#calendar-wrapper-mobile .select-menu__input::placeholder{
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 16px;
+}

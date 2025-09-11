@@ -1,6 +1,7 @@
 import theme from "./map.theme.js";
-import data from "./map.data.js";
+import dataPoints from "./map.data.js";
 import testingPoints from "./map.data2.json";
+import regions from "./russia-regions.json";
 
 const layerEl = document.querySelector(".main-map__body-layer");
 const mapEl = document.getElementById("map");
@@ -8,6 +9,9 @@ const mapEl2 = document.getElementById("map2");
 const mapEl3 = document.getElementById("map3");
 
 async function initMap(mapEl, data) {
+  let markersData = [];
+  let regionMarkersData = [];
+
   await ymaps3.ready;
 
   const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapFeature } =
@@ -37,7 +41,36 @@ async function initMap(mapEl, data) {
     [new YMapDefaultSchemeLayer({}), new YMapDefaultFeaturesLayer({})]
   );
 
-  const addCluster = () => {
+  const getMarkerElement = () => {
+    const markerElement = document.createElement("div");
+    markerElement.className = "icon-marker";
+    markerElement.style.transform = 'translate(-50%, -50%)';
+    markerElement.innerHTML =
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '<rect x="2" y="2" width="20" height="20" rx="10" fill="white" stroke="#CD313C" stroke-width="4"/>\n' +
+      '</svg>\n';
+
+    return markerElement;
+  }
+
+  function getClusterMarkerElement(count) {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    circle.className = "icon-marker";
+    circle.style.transform = 'translate(-50%, -50%)';
+    circle.innerHTML = `
+        <span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="10" fill="white" stroke="#CD313C" stroke-width="4"/>
+            <path d="M7 3.33975C9.29684 2.01366 12.0264 1.65431 14.5882 2.34074C17.15 3.02717 19.3342 4.70316 20.6603 7C21.9863 9.29684 22.3457 12.0264 21.6593 14.5882C20.9728 17.15 19.2968 19.3342 17 20.6603" stroke="#0073B4" stroke-width="4"/>
+          </svg>
+          <span style="position: absolute; display: inline-flex; top: 50%; left: 50%; margin-top:-13px; margin-left:-12px; width: 24px; height: 24px; align-items: center; justify-content: center; font-size: 14px;">${count}</span>
+        <span>
+    `;
+    return circle;
+  }
+
+  const addCluster = (data) => {
 
     const marker = setPopupMarker;
 
@@ -80,54 +113,24 @@ async function initMap(mapEl, data) {
     map.addChild(clusterer);
   }
 
-  /*const regionName = "Самарская область",
-    center = [38.943216, 45.033266],
-    zoom = 11;
-
-  var url = "http://nominatim.openstreetmap.org/search";
-
-  const params = new URLSearchParams({
-    q: regionName,
-    format: "json",
-    polygon_geojson: 1
-  });
-
-  fetch(`${url}?${params.toString()}`, {
-    headers: {
-      "Accept": "application/json"
-    }
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Ошибка сети: " + response.status);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data)
-
-      data.forEach(item => {
-        const lineStringFeature = new YMapFeature({
-          id: 'administrative',
-          geometry: item.geojson,
-          style: {
-            stroke: [{width: 2, color: 'rgb(14, 194, 219)'}]
-          }
-        });
-        map.addChild(lineStringFeature);
-      })
-
-    })
-    .catch(err => console.error(err));
-*/
   map.addChild(
     new YMapDefaultSchemeLayer({
       customization: theme,
     })
   );
 
+  function PopupContentRegion(markerProp) {
+    const tooltipWrapper = document.createElement("div");
+    tooltipWrapper.classList.add("main-map__tooltip");
+    const subjectWrapper = document.createElement("div");
+    const subjectText = document.createElement("p");
+    subjectText.innerText = markerProp.subject;
+    tooltipWrapper.appendChild(subjectWrapper);
+    subjectWrapper.appendChild(subjectText);
+
+    return tooltipWrapper;
+  }
   function PopupContent(markerProp) {
-    console.log(markerProp);
 
     const tooltipWrapper = document.createElement("div");
     tooltipWrapper.classList.add("main-map__tooltip");
@@ -205,25 +208,65 @@ async function initMap(mapEl, data) {
     return tooltipWrapper;
   }
 
-  /*data.forEach((markerProp) => {
-    const marker = new YMapPopupMarker({
-      coordinates: markerProp.coordinates,
-      position: markerProp.position,
-      content: () => PopupContent(markerProp),
+  if (data.length > 100) {
+    regions.forEach((region, index) => {
+      const points = data.filter(point => {
+        return point.region_id === region.osm_id
+      });
+
+      if (!points.length) return false;
+
+      const markerElement = getClusterMarkerElement(points.length);
+
+      const markerProp = {
+        subject: region.display_name,
+        coordinates: [region.lon, region.lat]
+      }
+
+      setPopupMarker(markerProp, true, () => markerElement, PopupContentRegion, regionMarkersData)
+
+      markerElement.addEventListener("click", function () {
+        const points = data.filter(point => {
+          return point.region_id === region.osm_id
+        });
+
+        regionMarkersData.forEach(regionMarkerItem => {
+          regionMarkerItem.element.style.display = 'block'
+        })
+
+        markerElement.style.display = 'none'
+
+        map.update({
+          location: {
+            center: [region.lon, region.lat],
+            zoom: map.zoom >= 8 ? map.zoom : 8,
+            duration: 200,
+            easing: 'ease-in-out'
+          }
+        });
+
+        markersData.forEach(markerItem => {
+          map.removeChild(markerItem.marker);
+        })
+
+        markersData = []
+
+        points.forEach(point => {
+          setPopupMarker(point, true)
+        })
+      })
+    })
+  }
+  else {
+    data.forEach((markerProp) => {
+      setPopupMarker(markerProp, true);
     });
-    map.addChild(marker);
-  });*/
-
-  addCluster();
-
-  /*data.forEach((markerProp) => {
-    //setPopupMarker(markerProp);
-  });*/
+  }
 
   let openedPopup = null;
 
-  function setPopupMarker(markerProp) {
-    const contentEl = PopupContent(markerProp);
+  function setPopupMarker(markerProp, append = false, getMarkerFunc = getMarkerElement, popupContentFunc = PopupContent, dataList = markersData) {
+    const contentEl = popupContentFunc(markerProp);
 
     const popupMarker = new YMapPopupMarker({
       coordinates: markerProp.coordinates,
@@ -236,22 +279,18 @@ async function initMap(mapEl, data) {
 
     let isShown = false;
 
-    const markerElement = document.createElement("div");
-    markerElement.className = "icon-marker";
-    markerElement.style.transform = 'translate(-50%, -50%)';
-    markerElement.innerHTML =
-      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-      '<rect x="2" y="2" width="20" height="20" rx="10" fill="white" stroke="#CD313C" stroke-width="4"/>\n' +
-      '</svg>\n';
+    const markerElement = getMarkerFunc();
 
     const marker = new YMapMarker(
       {
         coordinates: markerProp.coordinates,
-        anchor: [0.5, 1],
       },
       markerElement
     );
-    //map.addChild(marker);
+
+    if (append) {
+      map.addChild(marker);
+    }
 
     function setPopupVisibility(next) {
       isShown = next;
@@ -316,12 +355,21 @@ async function initMap(mapEl, data) {
       }
     });
 
+    markerProp.marker = marker;
+    markerProp.markerElement = markerElement;
+
+    if (Array.isArray(dataList))
+      dataList.push({
+      element: markerElement,
+      marker: marker
+    })
+
     return marker;
   }
 }
 
 if (mapEl) {
-  const dataPrepared = data.map(item => {
+  const dataPrepared = dataPoints.map(item => {
     return {
       ...item,
       coordinates: [item.coordinates[1], item.coordinates[0]]
@@ -333,6 +381,7 @@ if (mapEl) {
 if (mapEl2) {
   const data = testingPoints.map(item => {
     return {
+      region_id: item.region_id,
       coordinates: item.coordinates,
       format: {
         subject: item.region,
@@ -348,13 +397,14 @@ if (mapEl2) {
 }
 
 if (mapEl3) {
-  const dataPrepared = data.map(item => ({
+  const dataPrepared = dataPoints.map(item => ({
     ...item,
     coordinates: [item.coordinates[1], item.coordinates[0]],
   }))
 
   const mergedData = dataPrepared.concat(
     testingPoints.map(item => ({
+      region_id: item.region_id,
       coordinates: item.coordinates,
       format: {
         subject: item.region,

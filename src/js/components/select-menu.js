@@ -2,6 +2,7 @@ import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js";
 
 const dateInput = document.getElementById("date-input");
+const dateInputMob = document.getElementById("date-input-mob");
 
 document.querySelectorAll(".js-calendar").forEach((element) => {
   const calendarWrapper = element.closest(".calendar-wrapper");
@@ -109,7 +110,47 @@ if (dateInput) {
     });
   }
 }
+if(dateInputMob){
+  const calendarWrapperMob = dateInputMob.closest("#calendar-wrapper-mobile");
+  const clearButton = calendarWrapperMob.querySelector(".select-menu__clear");
+  const calendar = flatpickr(dateInputMob, {
+    positionElement: document.getElementById("calendar-wrapper"),
+    locale: "ru",
+    mode: "range",
+    dateFormat: "d.m.Y",
+    onDayCreate: function (dObj, dStr, fp, dayElem) {
+      // Проверяем, является ли день выходным (0 - воскресенье, 6 - суббота)
+      const isWeekend =
+        dayElem.dateObj.getDay() === 0 || dayElem.dateObj.getDay() === 6;
 
+      // Проверяем, выбран ли день
+      const isSelected = dayElem.classList.contains("selected");
+
+      if (isWeekend) {
+        if (isSelected) {
+          dayElem.style.color = "white"; // Выбранные выходные - белый текст
+        } else {
+          dayElem.style.color = "red"; // Невыбранные выходные - красный текст
+        }
+      }
+    },
+    onChange: function (selectedDates, dateStr) {
+      if (selectedDates.length > 1) {
+        dateInputMob.style.maxWidth = "275px";
+        clearButton.classList.add("select-menu__clear--active");
+      }
+    },
+  });
+
+  if (clearButton) {
+    clearButton.addEventListener("click", function () {
+      calendar.clear();
+      calendar.close();
+      dateInputMob.style.maxWidth = "210px";
+      clearButton.classList.remove("select-menu__clear--active");
+    });
+  }
+}
 //Кастомный селект
 import SlimSelect from "slim-select";
 const arrowSelect = document.querySelector(".custom-select__arrow");

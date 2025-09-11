@@ -894,7 +894,7 @@ button {
 .login-panel a {
   font-weight: 700;
   font-size: 48px;
-  display: inline-block;
+  display: block;
 }
 
 .login-panel a:first-child {
@@ -6011,6 +6011,7 @@ button {
 
 .head-filter__date {
   background-image: url("../img/icons/calendar.svg");
+  padding: 0;
 }
 
 .head-filter__doc {
@@ -6026,7 +6027,6 @@ button {
   transform: translateY(-50%) rotate(-90deg);
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url("../img/icons/arrow-up.svg");
 }
 
 .head-filter__reset {
@@ -6420,6 +6420,42 @@ button {
   font-weight: 400;
   font-size: 16px;
   font-family: var(--font-pt);
+}
+
+#calendar-wrapper-mobile .select-menu__input {
+  max-width: 100%;
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+
+#calendar-wrapper-mobile .select-menu__input::-webkit-input-placeholder {
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#calendar-wrapper-mobile .select-menu__input::-moz-placeholder {
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#calendar-wrapper-mobile .select-menu__input:-ms-input-placeholder {
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#calendar-wrapper-mobile .select-menu__input::-ms-input-placeholder {
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#calendar-wrapper-mobile .select-menu__input::placeholder {
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .tabs__nav {

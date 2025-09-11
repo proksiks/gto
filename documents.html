@@ -286,8 +286,41 @@
     </button>
   </form>
 
-  <button class="head-filter__date">Дата публикации</button>
-  <button class="head-filter__doc">Тип документа</button>
+  <div id="calendar-wrapper-mobile" class="head-filter__date">
+    <input class="select-menu__input" type="text" id="date-input-mob" placeholder="Выберите дату" readonly>
+
+    <button class="select-menu__clear">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+  <!-- <button class="head-filter__doc">Тип документа</button> -->
+  <div class="head-filter__doc custom-select" id="custom-select-docs">
+    <div class="custom-select__wrapper">
+
+      <select class="custom-select" id="my-select">
+        <option class="custom-select__placeholder" data-placeholder="true"></option>
+        <option value="1">Все</option>
+        <option value="2">Положения о фестивалях</option>
+        <option value="3">Приказы о награждении</option>
+      </select>
+
+      <button class="custom-select__clear">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 7L7 17M7 7L17 17" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <svg class="custom-select__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 10L12 16L6 10" stroke="#B4B4B4" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
 
   <button class="head-filter__reset">
     <svg class="sprite head-filter__reset-icon" viewBox="0 0 24 24" width="24" height="24">

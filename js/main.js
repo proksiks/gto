@@ -17030,6 +17030,7 @@ async function initMap(mapEl, data) {
       if (isShown) {
         hideTimeout = setTimeout(() => {
           contentEl.classList.remove('show');
+          markerElement.classList.remove('show');
           setPopupVisibility(false);
           clearTimeout(hideTimeout);
         }, 500);
@@ -17050,6 +17051,7 @@ async function initMap(mapEl, data) {
       if (isShown) {
         hideTimeout = setTimeout(() => {
           contentEl.classList.remove('show');
+          markerElement.classList.remove('show');
           setPopupVisibility(false);
           clearTimeout(hideTimeout);
         }, 300);
